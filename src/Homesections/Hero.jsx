@@ -1,0 +1,186 @@
+"use client";
+import { useState, useEffect } from "react";
+import GradientBlinds from "../bits/GradientBlinds";
+
+export default function HeroWithDashboard() {
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1024
+  );
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = windowWidth < 768;
+
+  return (
+    <div style={{ position: 'relative', overflow: 'hidden' }}> 
+      
+      <div style={{ 
+        position: 'absolute', 
+        top: 0, 
+        right: 0, 
+        bottom: 0, 
+        left: 0, 
+        zIndex: -10, 
+        minHeight: '100%' 
+      }}> 
+        <div style={{ width: "100%", height: "100%" }}>
+          <GradientBlinds
+            gradientColors={["#0d9488", "#14b8a6"]}
+            angle={180}
+            blindCount={isMobile ? 12 : 24}
+            blindMinWidth={isMobile ? 40 : 120}
+            noise={0}
+            distortAmount={0}
+            spotlightRadius={0}
+            spotlightOpacity={0}
+            mouseDampening={0}
+            mirrorGradient={true}
+            shineDirection="left"
+            mixBlendMode="normal"
+          />
+        </div>
+        <div style={{ 
+          position: 'absolute', 
+          top: 0, 
+          right: 0, 
+          bottom: 0, 
+          left: 0, 
+          backgroundColor: 'rgba(0, 0, 0, 0.4)' 
+        }}></div>
+      </div>
+
+      <div style={{ 
+        position: 'relative', 
+        zIndex: 20, 
+        display: 'flex', 
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        height: '100vh', 
+        textAlign: 'center', 
+        padding: '0 1.5rem',
+        marginBottom: '2.5rem',
+        marginTop: '2.5rem'
+      }}>
+        <h1 style={{ 
+          fontSize: isMobile ? '1.875rem' : '4.5rem', 
+          fontWeight: 'normal', 
+          letterSpacing: '-0.025em', 
+          color: 'white', 
+          marginBottom: '1.5rem',
+          lineHeight: '1.2'
+        }}>
+          The Internet Sees
+          <br />
+          <span style={{
+            backgroundImage: 'linear-gradient(to right, #06b6d4, #22d3ee)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
+            filter: 'drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))'
+          }}>
+            too much. Ghost It.
+          </span>
+        </h1>
+
+        <p style={{ 
+          maxWidth: '48rem', 
+          fontSize: isMobile ? '1.125rem' : '1.25rem', 
+          color: 'rgba(165, 243, 252, 0.8)', 
+          lineHeight: '1.75', 
+          marginBottom: '2.5rem', 
+          fontWeight: '300' 
+        }}>
+          GhostWareOS erases your fingerprint across comms, wallets, and
+          identity layers.
+          <br style={{ display: isMobile ? 'none' : 'block' }} />
+          Run aliases. Route through relays. Leave no metadata behind.
+        </p>
+
+        <div style={{ 
+          display: 'flex', 
+          flexDirection: isMobile ? 'column' : 'row', 
+          gap: '1.5rem', 
+          marginBottom: '3rem' 
+        }}>
+          <button style={{
+            padding: '1.25rem',
+            borderRadius: '9999px',
+            backgroundColor: 'rgba(6, 182, 212, 0.2)',
+            backdropFilter: 'blur(12px)',
+            border: '1px solid rgba(34, 211, 238, 0.4)',
+            color: 'white',
+            fontWeight: '500',
+            fontSize: '1.125rem',
+            boxShadow: '0 25px 50px -12px rgba(8, 145, 178, 0.3)',
+            cursor: 'pointer',
+            transition: 'all 0.3s',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.75rem',
+            justifyContent: 'center'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = 'rgba(6, 182, 212, 0.3)';
+            e.currentTarget.style.transform = 'scale(1.05) translateY(-4px)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'rgba(6, 182, 212, 0.2)';
+            e.currentTarget.style.transform = 'scale(1) translateY(0)';
+          }}
+          onMouseDown={(e) => {
+            e.currentTarget.style.transform = 'scale(0.95)';
+          }}
+          onMouseUp={(e) => {
+            e.currentTarget.style.transform = 'scale(1.05) translateY(-4px)';
+          }}>
+            Platform Coming Soon
+            <svg
+              style={{ width: '1.5rem', height: '1.5rem', transform: 'rotate(-45deg)' }}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+          <button style={{
+            padding: '1.25rem',
+            borderRadius: '9999px',
+            backgroundColor: 'rgba(255, 255, 255, 0.05)',
+            backdropFilter: 'blur(12px)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            color: 'rgba(165, 243, 252, 1)',
+            cursor: 'pointer',
+            transition: 'all 0.3s'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+            e.currentTarget.style.borderColor = 'rgba(34, 211, 238, 0.5)';
+            e.currentTarget.style.transform = 'scale(1.06)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+            e.currentTarget.style.transform = 'scale(1)';
+          }}>
+            Follow X
+          </button>
+        </div>
+
+        <p style={{ 
+          color: 'rgba(103, 232, 249, 0.6)', 
+          fontSize: '0.875rem', 
+          letterSpacing: '0.05em' 
+        }}>
+          Officially Endorsing Freedom Of The Press Foundation
+        </p>
+      </div>
+    </div>
+  );
+}
