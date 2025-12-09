@@ -61,7 +61,7 @@ export default function ComparisonSection() {
       `}</style>
 
       <section className="relative min-h-screen bg-[#020303] overflow-hidden flex items-center justify-center px-4 sm:px-6 py-16 sm:py-24">
-        <div className="absolute inset-0 opacity-80" style={{ backgroundImage: "url('/image_1bb0b8.png')" }} />
+        <div className="absolute inset-0 opacity-80" style={{ background: "linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%)" }} />
         <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
 
         <div className="relative z-20 max-w-5xl mx-auto text-center w-full">

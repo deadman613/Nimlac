@@ -68,12 +68,7 @@ export default function Homesection1() {
       <style jsx global>{`
         /* Full-screen ghost gradient background */
         .bg-gradient-ghost-bg {
-          background: linear-gradient(
-            to bottom right,
-            rgba(10, 25, 40, 0.98),
-            rgba(0, 10, 30, 0.92),
-            rgba(0, 0, 20, 0.95)
-          );
+          background: linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%);
         }
 
         /* Logo gradient */

@@ -26,7 +26,7 @@ export default function CoreModules() {
 
         /* Gradient backgrounds */
         .bg-gradient-diagonal {
-          background: linear-gradient(to bottom right, #000000, #001a1a, #000000);
+          background: linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%);
         }
         .bg-teal-card {
           background: linear-gradient(to bottom right, rgba(20, 184, 166, 0.15), rgba(0, 0, 0, 0.6));
