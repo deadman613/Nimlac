@@ -1,16 +1,32 @@
 "use client";
 import { useState, useEffect } from "react";
-import GradientBlinds from "../bits/GradientBlinds";
 
 export default function HeroWithDashboard() {
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 1024
   );
+  const [fontLoaded, setFontLoaded] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const font = new FontFace(
+      'Poppins',
+      'url(/Poppins-Bold.ttf)',
+      { weight: '700', style: 'normal' }
+    );
+    
+    font.load().then((loadedFace) => {
+      document.fonts.add(loadedFace);
+      setFontLoaded(true);
+    }).catch((error) => {
+      console.error('Font loading failed:', error);
+      setFontLoaded(true);
+    });
   }, []);
 
   const isMobile = windowWidth < 768;
@@ -25,24 +41,13 @@ export default function HeroWithDashboard() {
         bottom: 0, 
         left: 0, 
         zIndex: -10, 
-        minHeight: '100%' 
+        minHeight: '100%',
+        backgroundImage: 'url(/finalbg.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+     
       }}> 
-        <div style={{ width: "100%", height: "100%" }}>
-          <GradientBlinds
-            gradientColors={["#0d9488", "#14b8a6"]}
-            angle={180}
-            blindCount={isMobile ? 12 : 24}
-            blindMinWidth={isMobile ? 40 : 120}
-            noise={0}
-            distortAmount={0}
-            spotlightRadius={0}
-            spotlightOpacity={0}
-            mouseDampening={0}
-            mirrorGradient={true}
-            shineDirection="left"
-            mixBlendMode="normal"
-          />
-        </div>
         <div style={{ 
           position: 'absolute', 
           top: 0, 
@@ -68,11 +73,12 @@ export default function HeroWithDashboard() {
       }}>
         <h1 style={{ 
           fontSize: isMobile ? '1.875rem' : '4.5rem', 
-          fontWeight: 'normal', 
+          fontWeight: '700', 
           letterSpacing: '-0.025em', 
           color: 'white', 
           marginBottom: '1.5rem',
-          lineHeight: '1.2'
+          lineHeight: '1.2',
+          fontFamily: fontLoaded ? "'Poppins', sans-serif" : 'sans-serif'
         }}>
           The Internet Sees
           <br />
