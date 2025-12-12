@@ -97,7 +97,7 @@ export default function ContactPage() {
       `}</style>
 
       {/* SECTION 1: HERO */}
-      <section className="relative min-h-screen bg-contact-gradient overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6">
+      <section className="relative min-h-screen pt-20 bg-contact-gradient overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6">
         <div className="glitch-bg-container">
           <LetterGlitch glitchSpeed={30} centerVignette={true} outerVignette={false} smooth={true} />
         </div>

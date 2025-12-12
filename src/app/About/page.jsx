@@ -90,7 +90,7 @@ export default function AboutPage() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto text-center fade-in-up">
+        <div className="relative z-10 max-w-4xl pt-20 mx-auto text-center fade-in-up">
           
           {/* Main Heading */}
           <h1 

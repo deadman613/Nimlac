@@ -32,6 +32,15 @@ export default function ComparisonSection() {
         .glow-pulse-blue { animation: glowPulse 3s ease-in-out infinite; }
         .glow-pulse-red { animation: redGlow 2s ease-in-out infinite; }
 
+
+
+        // main bg
+        .mainbg
+      {
+       background: linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%);
+        
+      }
+
         /* Red cracked pillar — exactly same as your screenshot */
         .red-cracked-pillar {
           position: absolute;
@@ -60,9 +69,9 @@ export default function ComparisonSection() {
         }
       `}</style>
 
-      <section className="relative min-h-screen bg-[#020303] overflow-hidden flex items-center justify-center px-4 sm:px-6 py-16 sm:py-24">
+      <section className=" mainbg relative min-h-screen  overflow-hidden flex items-center justify-center px-4 sm:px-6 py-16 sm:py-24">
         <div className="absolute inset-0 opacity-80" style={{ background: "linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%)" }} />
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
+        {/* <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div> */}
 
         <div className="relative z-20 max-w-5xl mx-auto text-center w-full">
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white mb-2 tracking-tight px-4">
