@@ -78,12 +78,17 @@ export default function HeroWithDashboard() {
           color: 'white', 
           marginBottom: '1.5rem',
           lineHeight: '1.2',
+          background:'linear-gradient(to left , #06b6d4 , #ffffffff )',
+           backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
+    
           fontFamily: fontLoaded ? "'Poppins', sans-serif" : 'sans-serif'
         }}>
           The Internet Sees
           <br />
           <span style={{
-            backgroundImage: 'linear-gradient(to right, #06b6d4, #22d3ee)',
+            backgroundImage: 'linear-gradient(to right, #06b6d4, #f7feffff)',
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             color: 'transparent',
