@@ -76,6 +76,7 @@ export default function HeroWithDashboard() {
           letterSpacing: '-0.025em', 
           color: 'white', 
           marginBottom: '1.5rem',
+          paddingTop:"4.5rem",
           lineHeight: '1.2',
           background:'linear-gradient(to left , #06b6d4 , #ffffffff )',
           backgroundClip: 'text',
@@ -83,16 +84,16 @@ export default function HeroWithDashboard() {
           color: 'transparent',
           fontFamily: fontLoaded ? "'Poppins', sans-serif" : 'sans-serif'
         }}>
-          Machine Learning Meets Cloud
+          Empower Your Future at
           <br />
           <span style={{
-            backgroundImage: 'linear-gradient(to right, #06b6d4, #f7feffff)',
+            backgroundImage: 'linear-gradient(to right, #06b6d4, #d7f4f5e7)',
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             color: 'transparent',
             filter: 'drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))'
           }}>
-            Where Real Careers Are Built.
+            India's Premier ML & Cloud Institute
           </span>
         </h1>
 
@@ -104,8 +105,48 @@ export default function HeroWithDashboard() {
           marginBottom: '2.5rem', 
           fontWeight: '300' 
         }}>
-          Transform your career with cutting-edge ML skills and cloud expertise that top companies demand.
+          Build real-world AI & Cloud skills through industry-aligned projects and mentorship, so you land the jobs top companies are hiring today.
         </p>
+
+        <div style={{ 
+          maxWidth: '48rem', 
+          marginBottom: '2.5rem',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1rem',
+          textAlign: 'left'
+        }}>
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'flex-start', 
+            gap: '0.75rem',
+            color: 'rgba(165, 243, 252, 0.9)',
+            fontSize: isMobile ? '0.95rem' : '1.05rem'
+          }}>
+            <span style={{ color: '#06b6d4', fontSize: '1.25rem', flexShrink: 0 }}>✓</span>
+            <span><strong style={{ color: 'white' }}>Industry-Validated Learning:</strong> Hands-on projects with enterprise-grade ML models and cloud architectures.</span>
+          </div>
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'flex-start', 
+            gap: '0.75rem',
+            color: 'rgba(165, 243, 252, 0.9)',
+            fontSize: isMobile ? '0.95rem' : '1.05rem'
+          }}>
+            <span style={{ color: '#06b6d4', fontSize: '1.25rem', flexShrink: 0 }}>✓</span>
+            <span><strong style={{ color: 'white' }}>Hiring-Aligned Curriculum:</strong> Built around the exact skills employers seek in AI, ML and Cloud roles.</span>
+          </div>
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'flex-start', 
+            gap: '0.75rem',
+            color: 'rgba(165, 243, 252, 0.9)',
+            fontSize: isMobile ? '0.95rem' : '1.05rem'
+          }}>
+            <span style={{ color: '#06b6d4', fontSize: '1.25rem', flexShrink: 0 }}>✓</span>
+            <span><strong style={{ color: 'white' }}>Future-Focused:</strong> Training for the cutting-edge tools and trends shaping India's tech landscape.</span>
+          </div>
+        </div>
 
         <div style={{ 
           display: 'flex', 
@@ -144,7 +185,7 @@ export default function HeroWithDashboard() {
           onMouseUp={(e) => {
             e.currentTarget.style.transform = 'scale(1.05) translateY(-4px)';
           }}>
-            Platform Coming Soon
+            Talk to a Career Expert
             <svg
               style={{ width: '1.5rem', height: '1.5rem', transform: 'rotate(-45deg)' }}
               viewBox="0 0 24 24"
@@ -175,7 +216,7 @@ export default function HeroWithDashboard() {
             e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
             e.currentTarget.style.transform = 'scale(1)';
           }}>
-            Follow X
+            Explore Programs
           </button>
         </div>
 
