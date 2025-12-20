@@ -21,7 +21,7 @@ export default function Navbar() {
               <div className="absolute -inset-1 bg-cyan-500/30 blur-xl rounded-full animate-pulse -z-10"></div>
             </div>
             <span className="text-xl font-bold text-white tracking-tight">
-              GhostWare
+              Nimlac
             </span>
           </div>
 
@@ -62,7 +62,7 @@ export default function Navbar() {
               <div className="absolute -inset-1 bg-cyan-500/30 blur-xl rounded-full animate-pulse"></div>
             </div>
             <span className="text-xl font-bold text-white tracking-tight">
-              GhostWare
+            Nimlac
             </span>
           </div>
 

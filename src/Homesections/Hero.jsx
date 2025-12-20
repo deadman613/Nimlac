@@ -16,7 +16,7 @@ export default function HeroWithDashboard() {
   useEffect(() => {
     const font = new FontFace(
       'Poppins',
-      'url(/Poppins-Bold.ttf)',
+      'url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2)',
       { weight: '700', style: 'normal' }
     );
     
@@ -46,7 +46,6 @@ export default function HeroWithDashboard() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-     
       }}> 
         <div style={{ 
           position: 'absolute', 
@@ -79,13 +78,12 @@ export default function HeroWithDashboard() {
           marginBottom: '1.5rem',
           lineHeight: '1.2',
           background:'linear-gradient(to left , #06b6d4 , #ffffffff )',
-           backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            color: 'transparent',
-    
+          backgroundClip: 'text',
+          WebkitBackgroundClip: 'text',
+          color: 'transparent',
           fontFamily: fontLoaded ? "'Poppins', sans-serif" : 'sans-serif'
         }}>
-          The Internet Sees
+          Machine Learning Meets Cloud
           <br />
           <span style={{
             backgroundImage: 'linear-gradient(to right, #06b6d4, #f7feffff)',
@@ -94,7 +92,7 @@ export default function HeroWithDashboard() {
             color: 'transparent',
             filter: 'drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))'
           }}>
-            too much. Ghost It.
+            Where Real Careers Are Built.
           </span>
         </h1>
 
@@ -106,10 +104,7 @@ export default function HeroWithDashboard() {
           marginBottom: '2.5rem', 
           fontWeight: '300' 
         }}>
-          GhostWareOS erases your fingerprint across comms, wallets, and
-          identity layers.
-          <br style={{ display: isMobile ? 'none' : 'block' }} />
-          Run aliases. Route through relays. Leave no metadata behind.
+          Transform your career with cutting-edge ML skills and cloud expertise that top companies demand.
         </p>
 
         <div style={{ 
@@ -119,7 +114,7 @@ export default function HeroWithDashboard() {
           marginBottom: '3rem' 
         }}>
           <button style={{
-            padding: '1.25rem',
+            padding: '1.25rem 2.5rem',
             borderRadius: '9999px',
             backgroundColor: 'rgba(6, 182, 212, 0.2)',
             backdropFilter: 'blur(12px)',
@@ -161,7 +156,7 @@ export default function HeroWithDashboard() {
             </svg>
           </button>
           <button style={{
-            padding: '1.25rem',
+            padding: '1.25rem 2.5rem',
             borderRadius: '9999px',
             backgroundColor: 'rgba(255, 255, 255, 0.05)',
             backdropFilter: 'blur(12px)',
@@ -189,7 +184,7 @@ export default function HeroWithDashboard() {
           fontSize: '0.875rem', 
           letterSpacing: '0.05em' 
         }}>
-          Officially Endorsing Freedom Of The Press Foundation
+          🎓 50% Scholarship for First 100 Students | 100% Placement Guarantee
         </p>
       </div>
     </div>
