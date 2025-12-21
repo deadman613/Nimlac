@@ -149,19 +149,61 @@ export default function HeroWithDashboard() {
     }}
   >
     <button
+  style={{
+    position: "relative",
+    padding: "1.2rem 2.5rem",
+    borderRadius: "999px",
+    background: "linear-gradient(135deg, #22d3ee, #a78bfa)",
+    border: "none",
+    color: "#fff",
+    fontWeight: "700",
+    fontSize: "1.1rem",
+    cursor: "pointer",
+    boxShadow: "0 10px 30px rgba(34, 211, 238, 0.3)",
+    transition: "all 0.3s ease",
+    overflow: "visible",
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = "translateY(-2px)";
+    e.currentTarget.style.boxShadow = "0 15px 40px rgba(34, 211, 238, 0.5)";
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = "translateY(0)";
+    e.currentTarget.style.boxShadow = "0 10px 30px rgba(34, 211, 238, 0.3)";
+  }}
+>
+  <span style={{ display: "block", marginBottom: "0.3rem" }}>
+    Unlock Your Learning Advantage
+  </span>
+  <span
+    style={{
+      display: "block",
+      fontSize: "0.9rem",
+      fontWeight: "500",
+      opacity: "0.95",
+    }}
+  >
+    <span
       style={{
-        padding: "1rem 2.6rem",
-        borderRadius: "999px",
-        background: "linear-gradient(90deg, #22d3ee, #a78bfa)",
-        border: "none",
-        color: "#020617",
-        fontWeight: "600",
-        fontSize: "1.05rem",
-        cursor: "pointer",
+        color: "#077027ff",
+        fontWeight: "700",
+        textShadow: "0 0 10px rgba(16, 185, 129, 0.5)",
       }}
     >
-      Talk to an AI Career Expert
-    </button>
+      Online
+    </span>
+    {" / "}
+    <span
+      style={{
+        color: "#ef4444",
+        fontWeight: "700",
+        textShadow: "0 0 10px rgba(239, 68, 68, 0.5)",
+      }}
+    >
+      Offline
+    </span>
+  </span>
+</button>
 
     <button
       style={{

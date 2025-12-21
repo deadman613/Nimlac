@@ -9,6 +9,8 @@ import Homesection4 from "@/Homesections/Homesection4";
 import Homesection5 from "@/Homesections/Homesection5";
 import Homesection1_1 from "@/Homesections/Homesection1_1";
 import Homesection6 from "@/Homesections/Homesection6";
+import Homesection7 from "@/Homesections/Homesection7";
+import Homesection8 from "@/Homesections/Homesection8";
 export default function Home() {
   return (
     <div >
@@ -18,8 +20,10 @@ export default function Home() {
       <Homesection3/>
       <Homesection2/>
       <Homesection4/>
+      <Homesection7/>
       <Homesection6/>
       <Homesection5/>
+      <Homesection8/>
     </div>
   );
 }

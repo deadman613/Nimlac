@@ -50,16 +50,16 @@ export default function PlacementSection() {
 
         .bg-glow-pulse { animation: subtleGlow 8s ease-in-out infinite; }
 
-        .stat-card {
-          background: rgba(0, 0, 0, 0.4);
-          backdrop-filter: blur(12px);
-          border: 1px solid rgba(34, 211, 238, 0.3);
-          transition: all 0.4s ease;
+        .big-card {
+          background: rgba(0, 0, 0, 0.45);
+          backdrop-filter: blur(16px);
+          border: 1px solid rgba(34, 211, 238, 0.2);
         }
-        .stat-card:hover {
-          border-color: #67e8f9;
-          transform: translateY(-10px);
-          box-shadow: 0 20px 40px rgba(6, 255, 255, 0.2);
+
+        .stat-card {
+          background: rgba(0, 0, 0, 0.45);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(34, 211, 238, 0.25);
         }
 
         .company-badge {
@@ -71,7 +71,6 @@ export default function PlacementSection() {
         .company-badge:hover {
           border-color: #67e8f9;
           transform: scale(1.05);
-          box-shadow: 0 10px 30px rgba(6, 255, 255, 0.15);
         }
 
         .cta-primary {
@@ -86,79 +85,79 @@ export default function PlacementSection() {
         }
       `}</style>
 
-      <div className="min-h-screen bg-gradient-diagonal flex items-center justify-center p-6 overflow-hidden relative">
-        {/* Animated Background Glows */}
+      <section className="bg-gradient-diagonal relative py-12 md:py-16 lg:py-20 overflow-hidden">
+        {/* Background glows */}
         <div className="absolute inset-0 opacity-40 pointer-events-none">
-          <div className="absolute top-10 left-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] bg-glow-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-purple-600/20 rounded-full blur-[100px] bg-glow-pulse" style={{ animationDelay: "3s" }}></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-teal-500/15 rounded-full blur-[140px] bg-glow-pulse" style={{ animationDelay: "6s" }}></div>
+          <div className="absolute top-10 left-10 w-80 h-80 sm:w-96 sm:h-96 bg-cyan-500/20 rounded-full blur-[100px] sm:blur-[120px] bg-glow-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-72 h-72 sm:w-80 sm:h-80 bg-purple-600/20 rounded-full blur-[90px] sm:blur-[100px] bg-glow-pulse" style={{ animationDelay: "3s" }}></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl w-full">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <p className="text-cyan-400 text-base md:text-lg uppercase tracking-wider mb-4">Placements & Companies</p>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        {/* Main big card */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="big-card rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12">
+            {/* Top header */}
+            <p className="text-cyan-400 text-xs sm:text-sm uppercase tracking-widest mb-3">Placements & Companies</p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
               See Where Our Students Are <span className="text-cyan-400">Working</span>
             </h1>
-            <p className="text-gray-300 text-base md:text-xl max-w-4xl mx-auto leading-relaxed">
-              Companies now hire by proving skills, not just listing them on a resume.<br className="hidden md:block" />
-              NIMLACC’s placement assistance focuses on making you truly job-ready.
+            <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-3xl mb-8 sm:mb-10 leading-relaxed">
+              We focus on placement, not just completion. Career coaches, portfolio sprints,
+              and employer showcases help you convert offers faster.
             </p>
-          </div>
 
-          {/* Stats Grid - Balanced font sizes */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {stats.map((stat, i) => (
-              <div key={i} className="stat-card rounded-3xl p-8 text-center">
-                <div className="text-4xl md:text-5xl font-bold text-cyan-400 mb-4">{stat.big}</div>
-                <h4 className="text-lg md:text-xl font-semibold text-white mb-3">{stat.label}</h4>
-                <p className="text-gray-400 text-sm md:text-base leading-relaxed">{stat.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Companies Section */}
-          <div className="mb-16">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
-              <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Alumni Placements</h3>
-                <p className="text-gray-300 text-base md:text-lg">Where our learners now build their careers</p>
-              </div>
-              <div className="mt-4 sm:mt-0 bg-cyan-900/30 text-cyan-400 text-sm md:text-base px-5 py-3 rounded-full border border-cyan-800/50">
-                Verified offers | 2024-25
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-              {companies.map((comp, i) => (
-                <div key={i} className="company-badge rounded-2xl p-6 flex flex-col items-center text-center">
-                  <div className="w-14 h-14 bg-gradient-to-br from-cyan-600 to-purple-600 rounded-full flex items-center justify-center text-2xl font-bold text-white mb-4">
-                    {comp.logo}
+            {/* Responsive two-column layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+              {/* Left: Stats */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                {stats.map((stat, i) => (
+                  <div key={i} className="stat-card rounded-3xl p-5 sm:p-6 text-center">
+                    <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-cyan-400 mb-2">{stat.big}</div>
+                    <h4 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-2">{stat.label}</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{stat.desc}</p>
                   </div>
-                  <h4 className="text-base md:text-lg font-semibold text-white mb-1">{comp.name}</h4>
-                  <p className="text-cyan-400 text-sm md:text-base">{comp.field}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+                ))}
+              </div>
 
-          {/* Bottom Statement & CTA */}
-          <div className="text-center">
-            <p className="text-lg md:text-xl text-cyan-300 mb-10 max-w-4xl mx-auto leading-relaxed">
-              Our goal is your success. We provide the support to bridge classroom learning and the tech industry.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button className="cta-primary px-10 py-5 rounded-full text-lg md:text-xl font-bold">
+              {/* Right: Companies */}
+              <div>
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-5 sm:mb-6 gap-4">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">Alumni Placements</h3>
+                    <p className="text-gray-300 text-sm sm:text-base">Where our learners now build</p>
+                  </div>
+                  <div className="bg-cyan-900/40 text-cyan-400 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full border border-cyan-800/50">
+                    Verified offers | 2024-25
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {companies.map((comp, i) => (
+                    <div key={i} className="company-badge rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-cyan-600 to-purple-600 rounded-full flex items-center justify-center text-lg sm:text-xl font-bold text-white flex-shrink-0">
+                        {comp.logo}
+                      </div>
+                      <div>
+                        <h4 className="text-white font-semibold text-sm sm:text-base">{comp.name}</h4>
+                        <p className="text-cyan-400 text-xs sm:text-sm">{comp.field}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-start mt-8 sm:mt-10">
+              <button className="cta-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold">
                 Book My Free Counseling Call
               </button>
-              <button className="px-10 py-5 rounded-full text-lg md:text-xl font-medium text-cyan-400 border border-cyan-700/50 hover:border-cyan-400 hover:bg-cyan-900/20 transition-all">
+              <button className="px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-medium text-cyan-400 border border-cyan-700/50 hover:border-cyan-400 hover:bg-cyan-900/20 transition-all">
                 See Our Latest Placements
               </button>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }
