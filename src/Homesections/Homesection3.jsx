@@ -4,16 +4,25 @@ import { Check, X } from "lucide-react";
 
 export default function ComparisonSection() {
   const features = [
-    "AI Task Prioritization",
-    "Alias Replay System",
-    "Wallet Trace Cleaner",
-    "Metadata Erasure",
-    "Self-Hosted Relays",
+    "Enterprise-Grade Projects",
+    "Real Industry Datasets",
+    "Cloud Deployments (AWS/Azure)",
+    "Professional Portfolio Building",
+    "Industry-Aligned Curriculum",
+    "End-to-End Career Tracks",
+  ];
+
+  const traditionalDesc = [
+    "Generic Toy Projects",
+    "Public Sample Datasets Only",
+    "Local Training Only",
+    "Basic Notebooks, No Portfolio",
+    "Outdated or Academic Focus",
+    "Isolated Classes, No Pathway",
   ];
 
   return (
     <>
-      {/* Sirf zaruri animations + cracked pillar — blue lines completely removed */}
       <style jsx global>{`
         @keyframes floatPlatform {
           0%, 100% { transform: translate3d(0, 0, 0) rotateX(15deg); }
@@ -32,16 +41,10 @@ export default function ComparisonSection() {
         .glow-pulse-blue { animation: glowPulse 3s ease-in-out infinite; }
         .glow-pulse-red { animation: redGlow 2s ease-in-out infinite; }
 
+        .mainbg {
+          background: linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%);
+        }
 
-
-        // main bg
-        .mainbg
-      {
-       background: linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%);
-        
-      }
-
-        /* Red cracked pillar — exactly same as your screenshot */
         .red-cracked-pillar {
           position: absolute;
           right: 0; top: 0; bottom: 0;
@@ -69,21 +72,20 @@ export default function ComparisonSection() {
         }
       `}</style>
 
-      <section className=" mainbg relative min-h-screen  overflow-hidden flex items-center justify-center px-4 sm:px-6 py-16 sm:py-24">
+      <section className="mainbg relative min-h-screen overflow-hidden flex items-center justify-center px-4 sm:px-6 py-16 sm:py-24">
         <div className="absolute inset-0 opacity-80" style={{ background: "linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%)" }} />
-        {/* <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div> */}
 
         <div className="relative z-20 max-w-5xl mx-auto text-center w-full">
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white mb-2 tracking-tight px-4">
-            How Does <span className="text-cyan-400">GhostWareOS</span> Compare?
+            How Does <span className="text-cyan-400">NIMLACC</span> Compare?
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-400 font-light tracking-wide mb-12 sm:mb-16 px-4">
-            Real Anonymity Starts Where Accounts End.
+            Real Industry-Ready Training Starts Where Generic Courses End.
           </p>
 
-          {/* Floating platform — NO blue lines */}
+          {/* Floating comparison platform */}
           <div className="flex justify-center perspective-1000">
-            <div className="float-platform w-full max-w-2xl">
+            <div className="float-platform w-full max-w-4xl">
               <div 
                 className="relative w-full p-6 sm:p-10 pt-12 sm:pt-16 rounded-lg"
                 style={{ 
@@ -93,59 +95,72 @@ export default function ComparisonSection() {
                   transform: "rotateX(15deg)"
                 }}
               >
-                {/* Content — 100% same */}
-                <div className="relative z-20 flex flex-col sm:flex-row justify-between text-left gap-8 sm:gap-0">
-                  <div className="w-full sm:w-1/2 sm:pr-4 space-y-4 sm:space-y-6">
-                    <h3 className="text-xl sm:text-2xl font-bold text-cyan-300 mb-4 sm:mb-6">GhostWareOS</h3>
+                {/* Main comparison content - now using grid for perfect alignment */}
+                <div className="relative z-20 grid grid-cols-1 sm:grid-cols-2 text-left gap-8">
+                  {/* NIMLACC Side */}
+                  <div className="space-y-6 sm:space-y-7">
+                    <h3 className="text-xl sm:text-2xl font-bold text-cyan-300 mb-6">NIMLACC</h3>
                     {features.map((feature, i) => (
-                      <div key={i} className="flex items-center gap-3 sm:gap-4">
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 shrink-0 bg-cyan-800/50 rounded-full flex items-center justify-center border border-cyan-400 glow-pulse-blue">
-                          <Check className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" strokeWidth={3} />
+                      <div key={i} className="flex items-start gap-4">
+                        <div className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 bg-cyan-800/50 rounded-full flex items-center justify-center border border-cyan-400 glow-pulse-blue mt-0.5">
+                          <Check className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400" strokeWidth={3} />
                         </div>
-                        <span className="text-base sm:text-lg text-white font-medium">{feature}</span>
+                        <span className="text-base sm:text-lg text-white font-medium leading-tight pt-1">
+                          {feature}
+                        </span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="w-full sm:w-1/2 sm:pl-8 space-y-4 sm:space-y-6 relative">
-                    <h3 className="text-xl sm:text-2xl font-bold text-red-500 mb-4 sm:mb-6">VPNs</h3>
-                    {features.map((_, i) => (
-                      <div key={i} className="flex items-center gap-3 sm:gap-4 justify-between sm:justify-start relative">
-                        <div className="flex items-center gap-3 sm:gap-4 flex-1">
-                          <div className="w-7 h-7 sm:w-8 sm:h-8 shrink-0 flex items-center justify-center sm:invisible">
-                            <div className="sm:hidden w-8 h-8 flex items-center justify-center glow-pulse-red">
+                  {/* Traditional Courses Side */}
+                  <div className="space-y-6 sm:space-y-7">
+                    <h3 className="text-xl sm:text-2xl font-bold text-red-500 mb-6">Traditional Courses</h3>
+                    {traditionalDesc.map((desc, i) => (
+                      <div key={i} className="flex items-start gap-4">
+                        <div className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 mt-0.5" />
+                        <span className="text-base sm:text-lg text-gray-600 font-medium leading-tight pt-1">
+                          {desc}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Red cracked pillar with perfectly aligned X marks */}
+                <div className="red-cracked-pillar rounded-r-lg sm:rounded-r-lg rounded-b-lg sm:rounded-b-none">
+                  <div className="hidden sm:flex absolute inset-0 flex-col justify-start items-end pr-6 pt-[5.2rem]">
+                    {traditionalDesc.map((_, i) => (
+                      <div key={i} className="w-10 h-10 flex items-center justify-center glow-pulse-red mb-[2.05rem]">
+                        <X className="w-9 h-9 text-red-600" strokeWidth={5} />
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Mobile inline X marks */}
+                  <div className="sm:hidden absolute inset-0 pointer-events-none">
+                    <div className="grid grid-cols-1 gap-8 px-6 pt-[5rem]">
+                      <div className="space-y-6 sm:space-y-7" />
+                      <div className="space-y-6 sm:space-y-7">
+                        {traditionalDesc.map((_, i) => (
+                          <div key={i} className="flex justify-end -ml-4">
+                            <div className="w-9 h-9 flex items-center justify-center glow-pulse-red">
                               <X className="w-8 h-8 text-red-600" strokeWidth={5} />
                             </div>
                           </div>
-                          <div className="text-sm sm:text-lg text-gray-600 font-medium">
-                            {["Limited Scope","Account Dependency","No Trace Cleaning","Vulnerable Metadata","Centralized Relays"][i]}
-                          </div>
-                        </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
                   </div>
                 </div>
-
-                {/* Red cracked pillar — perfect */}
-                <div className="red-cracked-pillar rounded-r-lg sm:rounded-r-lg rounded-b-lg sm:rounded-b-none">
-                  <div className="hidden sm:flex absolute inset-0 flex-col justify-start items-end pr-4 sm:pr-6 pt-[4.5rem]">
-                    {features.map((_, i) => (
-                      <div key={i} className="w-10 h-10 flex items-center justify-center glow-pulse-red mb-[1.15rem]">
-                        <X className="w-10 h-10 text-red-600" strokeWidth={5} />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* BLUE LINES REMOVED — bilkul clean */}
               </div>
             </div>
           </div>
 
+          {/* Bottom shadow curve */}
           <div className="relative w-full max-w-4xl mx-auto -mt-8 h-8 sm:h-12 bg-gray-900/50 rounded-b-[50%] border-t border-cyan-800/50" />
 
           <p className="mt-12 sm:mt-20 text-base sm:text-xl font-light text-gray-300 tracking-wider px-4">
-            They hide your IP. <span className="text-cyan-400 font-bold">We erase your footprint.</span>
+            Others teach theory. <span className="text-cyan-400 font-bold">We build careers.</span>
           </p>
         </div>
       </section>

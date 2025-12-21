@@ -31,7 +31,7 @@ export default function HeroWithDashboard() {
     >
      <div
   style={{
-    maxWidth: "900px",
+    maxWidth: "1000px",
     margin: "0 auto",
     padding: isMobile ? "2.5rem 1.5rem" : "4.5rem 2rem",
     textAlign: "center",
@@ -57,7 +57,7 @@ export default function HeroWithDashboard() {
     >
       Machine Learning
     </span>{" "}
-    & AI
+   &  Cloud Computing 
     <br />
     <span
       style={{
@@ -82,6 +82,7 @@ export default function HeroWithDashboard() {
   >
     Learn real-world Machine Learning, Generative AI & Cloud deployment
     through industry-grade projects — not theory.
+
   </p>
 
   {/* Feature Pills */}

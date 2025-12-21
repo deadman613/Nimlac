@@ -9,8 +9,8 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop + Tablet */}
-      <nav className="hidden lg:flex items-center justify-center w-full fixed top-6 inset-x-0 z-50 pointer-events-none px-4">
-        <div className="flex items-center justify-between w-full max-w-7xl bg-[#06191a] rounded-full backdrop-blur-xl border border-cyan-500/20 ring-2 ring-cyan-400/50 shadow-2xl shadow-cyan-500/10 px-8 py-5 pointer-events-auto">
+      <nav className="hidden lg:flex items-center justify-center w-full fixed top-6 inset-x-0 z-50 pointer-events-none px-2">
+        <div className="flex items-center justify-between w-full max-w-7xl bg-[#06191a] rounded-full backdrop-blur-xl border border-cyan-500/20 ring-2 ring-cyan-400/50 shadow-2xl shadow-cyan-500/10 px-8 py-3 pointer-events-auto">
           
           {/* Logo */}
           <div className="flex items-center space-x-3">
@@ -44,6 +44,12 @@ export default function Navbar() {
               className="text-gray-300 hover:text-white transition"
             >
               Contact
+            </Link>
+             <Link
+              href="Courses"
+              className="text-gray-300 hover:text-white transition"
+            >
+              Courses
             </Link>
           </div>
         </div>

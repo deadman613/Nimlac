@@ -7,13 +7,15 @@ import Homesection2 from "@/Homesections/Homesection2";
 import Homesection3 from "@/Homesections/Homesection3";
 import Homesection4 from "@/Homesections/Homesection4";
 import Homesection5 from "@/Homesections/Homesection5";
+import Homesection1_1 from "@/Homesections/Homesection1_1";
 export default function Home() {
   return (
-    <div className="mx-auto">
+    <div >
       <Hero/>
       <Homesection1/>
-      <Homesection2/>
+      <Homesection1_1/>
       <Homesection3/>
+      <Homesection2/>
       <Homesection4/>
       <Homesection5/>
     </div>
