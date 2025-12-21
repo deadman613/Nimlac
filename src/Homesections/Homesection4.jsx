@@ -1,200 +1,183 @@
-// app/components/CoreModules.tsx
 "use client";
-import { Shield, Mail, Zap, Check } from "lucide-react";
 
-export default function CoreModules() {
+import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
+
+export default function Testimonials() {
+  const testimonials = [
+    {
+      quote:
+        "Before NIMLACC I had zero coding experience, but after the Diploma program I'm now confidently working as a Machine Learning intern at a top startup. The project-based learning and one-on-one mentoring completely transformed my skills and outlook.",
+      name: "Aisha Kapoor",
+      batch: "2024 Graduate",
+      journey: "Career Switcher → ML Engineer Intern",
+    },
+    {
+      quote:
+        "I was a final-year engineering student unsure of my path. NIMLACC's Advanced ML & Cloud course gave me direction – I built a full ML project portfolio and today I'm placed as a Data Analyst at a leading firm. This program gave me hands-on experience nobody else offered.",
+      name: "Raj Patel",
+      batch: "Batch of 2023",
+      journey: "CS Grad → Data Analyst",
+    },
+    {
+      quote:
+        "As a marketing professional, switching to tech felt impossible. NIMLACC's entry-level Machine Learning course was perfect. I learned from scratch, built real projects, and now I'm interviewing for data roles. I can't recommend it enough.",
+      name: "Sneha Verma",
+      batch: "Batch of 2024",
+      journey: "Non-Tech → ML Enthusiast",
+    },
+    {
+      quote:
+        "The hands-on cloud deployment projects and live mentoring sessions made all the difference. Within months of completing the course, I landed a role as a Junior ML Engineer at a growing fintech company.",
+      name: "Arjun Mehta",
+      batch: "2024 Graduate",
+      journey: "Fresher → Junior ML Engineer",
+    },
+    {
+      quote:
+        "NIMLACC didn't just teach theory — they made me build production-ready models. My portfolio impressed recruiters, and I'm now working as a Data Scientist at a unicorn startup.",
+      name: "Priya Singh",
+      batch: "Batch of 2024",
+      journey: "Analyst → Data Scientist",
+    },
+    {
+      quote:
+        "The career guidance and mock interviews prepared me perfectly. From confusion to clarity — I transitioned into an MLOps role thanks to the practical focus of the program.",
+      name: "Vikram Rao",
+      batch: "2023 Graduate",
+      journey: "DevOps → MLOps Engineer",
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  const next = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prev = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
   return (
     <>
-      {/* ALL CUSTOM CSS — replaces non-working Tailwind gradients + animations */}
       <style jsx global>{`
         @keyframes subtleGlow {
           0%, 100% { transform: scale(1); opacity: 0.3; }
           50% { transform: scale(1.05); opacity: 0.4; }
         }
-        @keyframes rotateClockwise {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        @keyframes rotateCounterClockwise {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(-360deg); }
-        }
-        @keyframes pulseScale {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.15); }
-        }
 
-        /* Gradient backgrounds */
         .bg-gradient-diagonal {
           background: linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%);
         }
-        .bg-teal-card {
-          background: linear-gradient(to bottom right, rgba(20, 184, 166, 0.15), rgba(0, 0, 0, 0.6));
-        }
-        .bg-purple-card {
-          background: linear-gradient(to bottom right, rgba(168, 85, 247, 0.15), rgba(0, 0, 0, 0.6));
-        }
-        .bg-orange-card {
-          background: linear-gradient(to bottom right, rgba(251, 146, 60, 0.15), rgba(0, 0, 0, 0.6));
-        }
 
-        /* Hover overlays */
-        .hover-overlay-teal {
-          background: linear-gradient(to bottom right, rgba(20, 184, 166, 0.1), transparent);
-        }
-        .hover-overlay-purple {
-          background: linear-gradient(to bottom right, rgba(168, 85, 247, 0.1), transparent);
-        }
-        .hover-overlay-orange {
-          background: linear-gradient(to bottom right, rgba(251, 146, 60, 0.1), transparent);
-        }
-
-        /* Icon glow rings */
-        .icon-glow-teal {
-          background: linear-gradient(to right, #14b8a6, #06b6d4);
-        }
-        .icon-glow-purple {
-          background: linear-gradient(to right, #a855f7, #ec4899);
-        }
-        .icon-glow-orange {
-          background: linear-gradient(to right, #fb923c, #ef4444);
-        }
-
-        /* Animations */
-        .icon-rotate-cw { animation: rotateClockwise 20s linear infinite; }
-        .icon-rotate-ccw { animation: rotateCounterClockwise 18s linear infinite; }
-        .icon-pulse { animation: pulseScale 4s ease-in-out infinite; }
         .bg-glow-pulse { animation: subtleGlow 8s ease-in-out infinite; }
 
-        /* Card hover */
-        .module-card {
-          transition: all 0.4s ease;
-          will-change: transform;
-        }
-        .module-card:hover {
-          transform: translateY(-12px) scale(1.03);
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+        .testimonial-card {
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          will-change: transform, opacity;
         }
       `}</style>
 
       <div className="min-h-screen bg-gradient-diagonal flex items-center justify-center p-6 overflow-hidden relative">
-        
         {/* Animated Background Glows */}
         <div className="absolute inset-0 opacity-40 pointer-events-none">
           <div className="absolute top-20 left-20 w-96 h-96 bg-teal-500/20 rounded-full blur-[100px] bg-glow-pulse"></div>
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] bg-glow-pulse" style={{ animationDelay: "4s" }}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-orange-500/10 rounded-full blur-[140px] bg-glow-pulse" style={{ animationDelay: "2s" }}></div>
         </div>
 
         <div className="relative z-10 max-w-7xl w-full">
-          
           {/* Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight">
-              Core Modules <span className="text-teal-400">Metadata Erasure</span>
+              Student <span className="text-cyan-400">Success Stories</span>
             </h1>
-            <p className="text-teal-300 text-lg md:text-xl font-light max-w-4xl mx-auto">
-              Some of the core modules that fuel GhostWareOS Metadata Erasure Self-Hosted Relays.
+            <p className="text-cyan-300 text-lg md:text-xl font-light max-w-4xl mx-auto">
+              Real graduates. Real careers. Real transformations.
             </p>
           </div>
 
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            
-            {/* GhostRelay */}
-            <div className="module-card relative group">
-              <div className="bg-teal-card backdrop-blur-xl border border-teal-800/50 rounded-3xl p-10 shadow-2xl overflow-hidden h-full">
-                <div className="absolute inset-0 hover-overlay-teal opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          {/* Narrower Carousel - Better width control */}
+          <div className="relative max-w-2xl mx-auto">
+            <div className="overflow-hidden rounded-3xl">
+              <div
+                className="flex transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              >
+                {[...testimonials, ...testimonials].map((t, i) => (
+                  <div key={i} className="w-full flex-shrink-0 px-3 sm:px-6">
+                    <div className="testimonial-card bg-black/40 backdrop-blur-xl border border-cyan-800/40 rounded-3xl p-6 sm:p-8 shadow-2xl h-full">
+                      {/* Quote Icon */}
+                      <div className="flex justify-center mb-6">
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full flex items-center justify-center">
+                          <Quote className="w-7 h-7 sm:w-8 sm:h-8 text-white" strokeWidth={2} />
+                        </div>
+                      </div>
 
-                <div className="w-24 h-24 mx-auto mb-8 relative">
-                  <div className="absolute inset-0 rounded-full icon-glow-teal blur-xl opacity-60 animate-pulse"></div>
-                  <div className="w-full h-full p-6 text-teal-400 relative z-10 icon-rotate-cw">
-                    <Shield className="w-full h-full" strokeWidth={1.5} />
-                  </div>
-                </div>
+                      {/* Quote Text - More responsive sizing */}
+                      <p className="text-sm sm:text-base md:text-lg text-gray-200 text-center leading-relaxed mb-6 md:mb-8">
+                        "{t.quote}"
+                      </p>
 
-                <h3 className="text-3xl font-bold text-white mb-6 text-center">GhostRelay</h3>
-                <p className="text-teal-200 text-center mb-8 leading-relaxed">
-                  Route Every Message Through Encrypted, Stateless Nodes.
-                </p>
-
-                <ul className="space-y-4">
-                  {[
-                    "Your data never touches the same route twice.",
-                    "No logs, no traces, not even on our side.",
-                    "Communicate like you're nowhere at all.",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-3 text-teal-100">
-                      <Check className="w-5 h-5 text-teal-400 mt-1 shrink-0" strokeWidth={3} />
-                      <span className="text-sm md:text-base">{item}</span>
+                      {/* Author Info */}
+                      <div className="text-center">
+                        <h4 className="text-xl sm:text-2xl font-bold text-cyan-300 mb-2">{t.name}</h4>
+                        <p className="text-sm sm:text-base text-gray-400 mb-1">{t.batch}</p>
+                        <p className="text-cyan-400 text-sm sm:text-base md:text-lg font-medium">{t.journey}</p>
+                      </div>
                     </div>
-                  ))}
-                </ul>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* GhostMask */}
-            <div className="module-card relative group">
-              <div className="bg-purple-card backdrop-blur-xl border border-purple-800/50 rounded-3xl p-10 shadow-2xl overflow-hidden h-full">
-                <div className="absolute inset-0 hover-overlay-purple opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            {/* Navigation Arrows - Hidden on mobile, visible on larger screens */}
+            <button
+              onClick={prev}
+              className="hidden sm:flex absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-black/60 backdrop-blur-md rounded-full items-center justify-center border border-cyan-700/50 hover:border-cyan-400 hover:bg-cyan-900/30 transition-all"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="w-6 h-6 md:w-7 md:h-7 text-cyan-400" />
+            </button>
+            <button
+              onClick={next}
+              className="hidden sm:flex absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-black/60 backdrop-blur-md rounded-full items-center justify-center border border-cyan-700/50 hover:border-cyan-400 hover:bg-cyan-900/30 transition-all"
+              aria-label="Next"
+            >
+              <ChevronRight className="w-6 h-6 md:w-7 md:h-7 text-cyan-400" />
+            </button>
 
-                <div className="w-24 h-24 mx-auto mb-8 relative">
-                  <div className="absolute inset-0 rounded-full icon-glow-purple blur-xl opacity-60 animate-pulse"></div>
-                  <div className="w-full h-full p-6 text-purple-400 relative z-10 icon-rotate-ccw">
-                    <Mail className="w-full h-full" strokeWidth={1.5} />
-                  </div>
-                </div>
-
-                <h3 className="text-3xl font-bold text-white mb-6 text-center">GhostMask</h3>
-                <p className="text-purple-200 text-center mb-8 leading-relaxed">
-                  Auto-Generate Aliases That Forward And Reply Without Exposing Your Real IDs
-                </p>
-
-                <ul className="space-y-4">
-                  {[
-                    "Disguise every inbox.",
-                    "Build a wall between who you are and who they think you are.",
-                    "Reply safely knowing your real identity is invisible.",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-3 text-purple-100">
-                      <Check className="w-5 h-5 text-purple-400 mt-1 shrink-0" strokeWidth={3} />
-                      <span className="text-sm md:text-base">{item}</span>
-                    </div>
-                  ))}
-                </ul>
-              </div>
+            {/* Dots Indicator */}
+            <div className="flex justify-center gap-3 mt-10">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentIndex(i)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    i === currentIndex
+                      ? "bg-cyan-400 w-8"
+                      : "bg-cyan-800/50 hover:bg-cyan-600"
+                  }`}
+                  aria-label={`Go to testimonial ${i + 1}`}
+                />
+              ))}
             </div>
+          </div>
 
-            {/* GhostScrub */}
-            <div className="module-card relative group">
-              <div className="bg-orange-card backdrop-blur-xl border border-orange-800/50 rounded-3xl p-10 shadow-2xl overflow-hidden h-full">
-                <div className="absolute inset-0 hover-overlay-orange opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                <div className="w-24 h-24 mx-auto mb-8 relative">
-                  <div className="absolute inset-0 rounded-full icon-glow-orange blur-xl opacity-70 animate-pulse"></div>
-                  <div className="w-full h-full p-6 text-orange-400 relative z-10 icon-pulse">
-                    <Zap className="w-full h-full" strokeWidth={2} />
-                  </div>
-                </div>
-
-                <h3 className="text-3xl font-bold text-white mb-6 text-center">GhostScrub</h3>
-                <p className="text-orange-200 text-center mb-8 leading-relaxed">
-                  Remove Traces, Revoke Approvals, And Wipe Metadata Before It's Weaponized.
-                </p>
-
-                <ul className="space-y-4">
-                  {[
-                    "Scan wallets for hidden token approvals.",
-                    "Kill risky approvals with a single revoke.",
-                    "Watch your on-chain footprint vanish.",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-3 text-orange-100">
-                      <Check className="w-5 h-5 text-orange-400 mt-1 shrink-0" strokeWidth={3} />
-                      <span className="text-sm md:text-base">{item}</span>
-                    </div>
-                  ))}
-                </ul>
-              </div>
-            </div>
+          {/* CTA */}
+          <div className="text-center mt-20">
+            <p className="text-xl md:text-2xl text-cyan-300 font-light max-w-4xl mx-auto">
+              Ready to be our next success story?{" "}
+              <span className="text-white font-bold">Talk to a Career Expert</span> and start your transformation.
+            </p>
           </div>
         </div>
       </div>
