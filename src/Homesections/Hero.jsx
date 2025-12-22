@@ -18,20 +18,23 @@ export default function HeroWithDashboard() {
 
   return (
     <section
-      style={{
-        position: "relative",
-        minHeight: "100vh",     // ⭐ REQUIRED
-        paddingTop: "3.5rem",
-        display: "flex",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        backgroundColor: "#001e2b",
-        backgroundImage:
-          "linear-gradient(180deg, rgba(2,10,20,0.92), rgba(3, 20, 30, 0.66)), url('/NIMLACC.jpeg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        color: "#e5e7eb",
-      }}
+     style={{
+  position: "relative",
+  minHeight: "100vh",     // ⭐ REQUIRED
+  paddingTop: "1.5rem",
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "center",
+  backgroundColor: "#001e2b",
+  backgroundImage:
+    "linear-gradient(180deg, rgba(2,10,20,0.92), rgba(3, 20, 30, 0.66)), url('/NIMLACC.jpeg')",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  color: "#e5e7eb",
+  boxShadow: "inset 0 -100px 100px -50px rgba(6, 182, 212, 0.4)",
+  
+  boxShadow: "inset 0 -120px 120px -60px rgba(6, 182, 212, 0.5), 0 4px 20px rgba(0, 0, 0, 0.3)",
+}}
     >
 
       <div
@@ -90,59 +93,7 @@ export default function HeroWithDashboard() {
 
         </p>
 
-        {/* Feature Pills */}
-        {/* <div
-    style={{
-      display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "center",
-      gap: "0.9rem",
-      marginBottom: "3.2rem",
-    }}
-  >
-  {[
-  {
-    text: "Real ML Models (NLP, CV, GenAI)",
-    bg: "rgba(11, 54, 60, 0.12)",
-    border: "rgba(34, 211, 238, 0.45)",
-    color: "#67e8f9",
-  },
-  {
-    text: "Production-ready MLOps",
-    bg: "rgba(167, 139, 250, 0.12)",
-    border: "rgba(167, 139, 250, 0.45)",
-    color: "#c4b5fd",
-  },
-  {
-    text: "Cloud Deployment",
-    bg: "rgba(56, 189, 248, 0.12)",
-    border: "rgba(56, 189, 248, 0.45)",
-    color: "#bae6fd",
-  },
-  {
-    text: "Hiring-aligned Curriculum",
-    bg: "rgba(34, 197, 94, 0.12)",
-    border: "rgba(34, 197, 94, 0.45)",
-    color: "#86efac",
-  },
-].map((item, i) => (
-  <div
-    key={i}
-    style={{
-      padding: "0.65rem 1.1rem",
-      borderRadius: "999px",
-      background: item.bg,
-      border: `1px solid ${item.border}`,
-      fontSize: "0.9rem",
-      color: item.color,
-      fontWeight: "500",
-      whiteSpace: "nowrap",
-    }}
-  >
-    {item.text}
-      </div>
-    ))}
-  </div> */}
+      
 
         <p
           style={{
@@ -170,7 +121,7 @@ export default function HeroWithDashboard() {
               position: "relative",
               padding: "1.2rem 2.5rem",
               borderRadius: "999px",
-              background: "linear-gradient(135deg, #22d3ee, #a78bfa)",
+              background: "linear-gradient(135deg, #22d3eea9, #a78bfab1)",
               border: "none",
               color: "#fff",
               fontWeight: "700",
@@ -210,7 +161,7 @@ export default function HeroWithDashboard() {
             style={{
               padding: "1rem 2.6rem",
               borderRadius: "999px",
-              background: "transparent",
+              background: "linear-gradient(135deg, #22d3eeb7, #a78bfaa9)",
               border: "1px solid #334155",
               color: "#e5e7eb",
               fontWeight: "500",
@@ -251,8 +202,24 @@ export default function HeroWithDashboard() {
               border: "rgba(34, 197, 94, 0.45)",
               color: "#86efac",
             },
+            {
+              text:'Offline',
+              bg:"rgba(232, 21, 21, 0.22)",
+              border:"rgba(253, 9, 9, 1)",
+              color:"rgba(255, 255, 255, 1)"
+
+
+            },
+             {
+              text:'online',
+              bg:"rgba(47, 229, 19, 0.24)",
+              border:"rgba(58, 253, 9, 1)",
+              color:"rgba(255, 255, 255, 1)"
+
+
+            }
           ]}
-          speed={3.6}
+          speed={2.6}
           renderItem={(item) => (
             <button
               className="px-5 py-2 rounded-full border backdrop-blur-md whitespace-nowrap"
