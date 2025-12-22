@@ -3,11 +3,11 @@
 
 export default function GallerySection() {
   const images = [
-    { src: "/nimlacpic/1.jpeg", alt: "Students in classroom discussion" },
-    { src: "/nimlacpic/2.jpeg", alt: "Modern learning space with plants" },
-    { src: "/nimlacpic/3.jpeg", alt: "Team working on ML project" },
-    { src: "/nimlacpic/4.jpeg", alt: "Faculty teaching session" },
-    { src: "/nimlacpic/5.jpeg", alt: "Students at hackathon" },
+    { src: "/nimlacpic/1.webp", alt: "Students in classroom discussion" },
+    { src: "/nimlacpic/2.webp", alt: "Modern learning space with plants" },
+    { src: "/nimlacpic/3.webp", alt: "Team working on ML project" },
+    { src: "/nimlacpic/4.webp", alt: "Faculty teaching session" },
+    { src: "/nimlacpic/5.webp", alt: "Students at hackathon" },
     { src: "/nimlacpic/6.jpeg", alt: "Live cloud deployment lab" },
     { src: "/nimlacpic/8.jfif", alt: "Student presenting project" },
     { src: "/nimlacpic/9.jfif", alt: "NIMLACC campus environment" },
@@ -188,7 +188,7 @@ export default function GallerySection() {
             </div>
             
             {/* CENTER HERO IMAGE - 8.jpeg */}
-            <div className="grid-item center-large">
+            <div className="grid-item center-large object-bottom">
               <img src={images[6].src} alt={images[6].alt} className="gallery-img" />
             </div>
 
