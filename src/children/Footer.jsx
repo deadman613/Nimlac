@@ -1,174 +1,160 @@
-// components/Footer.tsx
 "use client";
-import Link from 'next/link';
-import { Ghost, Twitter, MessageCircle, Globe, Shield, Copyright } from 'lucide-react';
+import Link from "next/link";
+import { useState } from "react";
 
-export default function Footer() {
+export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <>
-      {/* Pure CSS replacements for broken Tailwind gradients */}
-      <style jsx global>{`
-        .bg-footer-main {
-          background: linear-gradient(to bottom, #000000 0%, #06191a 50%, #000000 100%);
+      {/* Font definition — only change */}
+      <style jsx>{`
+        @font-face {
+          font-family: 'Organix';
+          src: url('/font/Organix.otf') format('opentype');
         }
-        .bg-top-glow {
-          background: linear-gradient(to top, rgba(6, 65, 77, 0.2), transparent);
-        }
-        .logo-glow-bg {
-          background: linear-gradient(to bottom right, #22d3ee, #3b82f6);
-        }
-        .underline-cyan::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: -4px;
-          width: 32px;
-          height: 2px;
-          background: #22d3ee;
-          border-radius: 2px;
-          box-shadow: 0 0 12px #22d3ee;
-        }
-        .particle {
-          position: absolute;
-          width: 2px;
-          height: 2px;
-          background: #22d3ee;
-          border-radius: 50%;
-          opacity: 0.35;
-          animation: floatUp 6s infinite ease-in-out;
-        }
-        @keyframes floatUp {
-          0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
-          50% { transform: translateY(-50px) translateX(15px); opacity: 0.7; }
+        .nav-font {
+          font-family: 'Organix', sans-serif;
         }
       `}</style>
 
-      <footer className="relative w-full bg-footer-main border-t border-cyan-500/20 overflow-hidden">
-        
-        {/* Top subtle glow */}
-        <div className="absolute inset-0 bg-top-glow pointer-events-none" />
-        
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 py-12 md:py-16 relative z-10">
+      {/* Desktop + Tablet */}
+      <nav className="hidden lg:flex items-center justify-center w-full fixed top-6 inset-x-0 z-50 pointer-events-none px-2">
+        <div className="flex items-center justify-between w-full max-w-7xl bg-[#06191a] rounded-full backdrop-blur-xl border border-cyan-500/20 ring-2 ring-cyan-400/50 shadow-2xl shadow-cyan-500/10 px-8 py-4 pointer-events-auto">
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-12">
-            
-            {/* Brand */}
-            <div className="space-y-6 md:space-y-4">
-              <div className="flex items-center space-x-3">
-                <div className="relative">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full logo-glow-bg flex items-center justify-center shadow-lg shadow-cyan-500/50">
-                    <Ghost className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                  </div>
-                  <div className="absolute -inset-1 bg-cyan-500/30 blur-lg rounded-full animate-pulse"></div>
-                </div>
-                <span className="text-xl sm:text-2xl font-bold text-white tracking-tight">GhostWare</span>
+          {/* Left-aligned Logo - Only Image */}
+          <div className="flex items-center">
+            <div className="relative">
+              <div className="w-full h-10 flex items-center justify-center">
+                <img 
+                  src="/Nimlacc-2.svg" 
+                  alt="nimlacc logo" 
+                  className="w-full h-full scale-200 object-cover"
+                />
               </div>
-              
-              <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-                Operate unseen. Stay untraceable.
-              </p>
-              
-              <div className="flex space-x-4 pt-2">
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
-                   className="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 group">
-                  <Twitter className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition" />
-                </a>
-                <a href="https://t.me" target="_blank" rel="noopener noreferrer"
-                   className="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 group">
-                  <MessageCircle className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition" />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 group">
-                  <Globe className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition" />
-                </a>
-              </div>
-            </div>
-
-            {/* Product */}
-            <div className="mt-4 md:mt-0">
-              <h3 className="text-white font-semibold mb-5 relative inline-block underline-cyan">
-                Product
-              </h3>
-              <ul className="space-y-3">
-                {['Why', 'Core', 'FAQ', 'Comparison'].map((item) => (
-                  <li key={item}>
-                    <Link href={`/${item.toLowerCase()}`} className="text-gray-400 hover:text-cyan-300 transition-all duration-300 hover:translate-x-0.5 inline-block">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Community */}
-            <div className="mt-4 md:mt-0">
-              <h3 className="text-white font-semibold mb-5 relative inline-block underline-cyan">
-                Community
-              </h3>
-              <ul className="space-y-3">
-                {['Twitter (X)', 'Telegram', 'Medium'].map((item) => (
-                  <li key={item} className="group">
-                    <a href="#" className="text-gray-400 hover:text-cyan-300 transition-all duration-300 hover:translate-x-0.5 inline-block flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition"></span>
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Legal */}
-            <div className="mt-4 md:mt-0">
-              <h3 className="text-white font-semibold mb-5 relative inline-block underline-cyan">
-                Legal
-              </h3>
-              <ul className="space-y-3">
-                {['Privacy Policy', 'Terms of Service'].map((item) => (
-                  <li key={item} className="group">
-                    <Link href={`/${item.toLowerCase().replace(' ', '-')}`} className="text-gray-400 hover:text-cyan-300 transition-all duration-300 hover:translate-x-0.5 inline-block flex items-center gap-2">
-                      <Shield className="w-3 h-3 text-cyan-400 opacity-0 group-hover:opacity-60 transition" />
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <div className="absolute -inset-3 bg-cyan-500/30 blur-2xl rounded-full animate-pulse -z-10"></div>
             </div>
           </div>
 
-          {/* Bottom Bar */}
-          <div className="mt-10 md:mt-16 pt-6 border-t border-cyan-500/20 grid grid-cols-2 md:flex justify-between items-center gap-6 text-sm">
-            <div className="flex items-center gap-2 text-gray-500">
-              <Copyright className="w-4 h-4" />
-              <span>2025 GhostWare. All rights reserved.</span>
+          {/* Center Links */}
+          <div className="flex items-center space-x-10">
+            <Link
+              href="/"
+              className="text-[#03ffff] font-medium hover:text-white transition text-lg nav-font"
+            >
+              Home
+            </Link>
+            <Link
+              href="/About"
+              className="text-gray-300 hover:text-white transition text-lg nav-font"
+            >
+              About
+            </Link>
+            <Link
+              href="/Contact"
+              className="text-gray-300 hover:text-white transition text-lg nav-font"
+            >
+              Contact
+            </Link>
+            <Link
+              href="/courses"
+              className="text-gray-300 hover:text-white transition text-lg nav-font"
+            >
+              Courses
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Version */}
+      <nav className="lg:hidden w-[94%] max-w-md mx-auto my-4 bg-[#06191a] rounded-3xl backdrop-blur-xl border-b border-cyan-500/20 fixed inset-x-0 top-4 z-50">
+        <div className="px-6 py-4 flex items-center justify-between">
+          
+          {/* Logo - Only Image */}
+          <div className="flex items-center">
+            <div className="relative">
+              <div className="w-12 h-12 flex items-center justify-center">
+                <img 
+                  src="/Nimlacc-2.svg" 
+                  alt="nimlacc logo" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="absolute -inset-1 bg-cyan-500/30 blur-xl rounded-full animate-pulse"></div>
             </div>
-            
-            <div className="flex items-center gap-6 text-gray-500 order-first md:order-last">
-              <span className="hover:text-cyan-400 cursor-default transition">Made with zero trust</span>
-              <span className="text-cyan-400 font-semibold flex items-center gap-1">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
-                </span>
-                Online
-              </span>
+          </div>
+
+          {/* Hamburger Button */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="relative w-12 h-12 flex items-center justify-center group"
+          >
+            <div className="absolute inset-0 rounded-full border-2 border-cyan-400/50 animate-ping"></div>
+            <div className="absolute inset-1 rounded-full border border-cyan-400/80"></div>
+            <div className="relative w-9 h-9 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 shadow-lg shadow-cyan-500/80 flex items-center justify-center">
+              <svg
+                className={`w-5 h-5 text-white transition-all duration-300 ${
+                  mobileOpen ? "rotate-45" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={3}
+                  d={
+                    mobileOpen
+                      ? "M6 18L18 6M6 6l12 12"
+                      : "M4 6h16M4 12h16M4 18h16"
+                  }
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`transition-all duration-300 ease-out overflow-hidden ${
+            mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="mx-4 mt-3 bg-[#06191a]/95 backdrop-blur-xl border border-cyan-500/20 rounded-3xl pb-6">
+            <div className="px-8 pt-4 space-y-5 text-lg">
+              <Link
+                href="/"
+                className="block text-[#03ffff] font-medium hover:text-white nav-font"
+                onClick={() => setMobileOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                href="/About"
+                className="block text-gray-300 hover:text-white nav-font"
+                onClick={() => setMobileOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                href="/Contact"
+                className="block text-gray-300 hover:text-white nav-font"
+                onClick={() => setMobileOpen(false)}
+              >
+                Contact
+              </Link>
+              <Link
+                href="/Courses"
+                className="block text-gray-300 hover:text-white nav-font"
+                onClick={() => setMobileOpen(false)}
+              >
+                Courses
+              </Link>
             </div>
           </div>
         </div>
-
-        {/* Floating Particles */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {[...Array(5)].map((_, i) => (
-            <div
-              key={i}
-              className="particle"
-              style={{
-                top: `${20 + i * 15}%`,
-                right: `${10 + i * 15}%`,
-                animationDelay: `${i * 0.6}s`,
-              }}
-            />
-          ))}
-        </div>
-      </footer>
+      </nav>
     </>
   );
 }

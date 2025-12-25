@@ -55,42 +55,42 @@ export default function FinalCTASection() {
         }
       `}</style>
 
-      <section className="bg-gradient-diagonal relative py-20 lg:py-28 overflow-hidden">
+      <section className="bg-gradient-diagonal relative py-12 md:py-16 lg:py-20 overflow-hidden min-h-[85vh] flex items-center">
         {/* Background glows */}
         <div className="absolute inset-0 opacity-40 pointer-events-none">
-          <div className="absolute top-10 left-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] bg-glow-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-purple-600/20 rounded-full blur-[100px] bg-glow-pulse" style={{ animationDelay: "3s" }}></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-teal-500/15 rounded-full blur-[140px] bg-glow-pulse" style={{ animationDelay: "6s" }}></div>
+          <div className="absolute top-10 left-10 w-64 h-64 md:w-96 md:h-96 bg-cyan-500/20 rounded-full blur-[120px] bg-glow-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-64 h-64 md:w-80 md:h-80 bg-purple-600/20 rounded-full blur-[100px] bg-glow-pulse" style={{ animationDelay: "3s" }}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-96 md:h-96 bg-teal-500/15 rounded-full blur-[140px] bg-glow-pulse" style={{ animationDelay: "6s" }}></div>
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center w-full">
           {/* Main CTA Card */}
-          <div className="cta-card rounded-3xl p-10 lg:p-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
+          <div className="cta-card rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-14">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">
               Your Future in AI & Cloud Starts <span className="text-cyan-400">Here</span>
             </h2>
 
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-4xl mx-auto mb-12">
-              NIMLACC is not just another training center – it’s India’s most serious, industry-aligned ML & Cloud ecosystem. 
+            <p className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto mb-6 md:mb-8">
+              NIMLACC is not just another training center – it's India's most serious, industry-aligned ML & Cloud ecosystem. 
               With demand for AI and ML talent projected to hit 1 million professionals by 2026 and cloud roles set to grow into the millions, 
               <span className="text-cyan-300 font-semibold"> the time to act is now</span>.
             </p>
 
-            <p className="text-xl md:text-2xl text-gray-100 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Don’t miss India’s tech boom – invest in your skills and future.
+            <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
+              Don't miss India's tech boom – invest in your skills and future.
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button className="btn-primary px-10 py-5 rounded-full text-xl font-bold">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center">
+              <button className="btn-primary w-full sm:w-auto px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full text-base sm:text-lg md:text-xl font-bold">
                 Talk to a Career Expert
               </button>
-              <button className="btn-secondary px-10 py-5 rounded-full text-xl font-medium">
+              <button className="btn-secondary w-full sm:w-auto px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full text-base sm:text-lg md:text-xl font-medium">
                 Explore Programs
               </button>
             </div>
 
-            <p className="text-base md:text-lg text-gray-400 mt-10">
+            <p className="text-xs sm:text-sm md:text-base text-gray-400 mt-6 md:mt-8 px-2">
               Admission is limited to ensure quality mentorship — <span className="text-cyan-300 font-semibold">secure your spot in the next batch today</span>.
             </p>
           </div>

@@ -8,9 +8,9 @@ export default function GallerySection() {
     { src: "/nimlacpic/3.webp", alt: "Team working on ML project" },
     { src: "/nimlacpic/4.webp", alt: "Faculty teaching session" },
     { src: "/nimlacpic/5.webp", alt: "Students at hackathon" },
-    { src: "/nimlacpic/6.jpeg", alt: "Live cloud deployment lab" },
-    { src: "/nimlacpic/8.jfif", alt: "Student presenting project" },
-    { src: "/nimlacpic/9.jfif", alt: "NIMLACC campus environment" },
+    { src: "/nimlacpic/6.webp", alt: "Live cloud deployment lab" },
+    { src: "/nimlacpic/8.webp", alt: "Student presenting project" },
+    { src: "/nimlacpic/9.webp", alt: "NIMLACC campus environment" },
   ];
 
   return (

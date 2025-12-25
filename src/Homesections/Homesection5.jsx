@@ -9,28 +9,28 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: "What is GhostWareOS and what does it do?",
-      answer: "GhostWareOS operates at the kernel level to provide comprehensive privacy protection. It manages your digital identity through AI-generated aliases, routes your traffic through self-hosted relays, and automatically scrubs metadata from all your activities. It's built for total invisibility across messages, wallets, and profiles."
+      question: " What makes NIMLACC different from other tech institutes?",
+      answer: " NIMLACC focuses 100% on Machine Learning & Cloud Computing with a practical, project-based approach aligned to real hiring needs — not just theory or generic tech training."
     },
     {
-      question: "Do You Lag Or Track anything?",
+      question: " Do I need coding experience to join your programs?",
       answer: "No. GhostWareOS is completely open-source and self-hosted. We don't track any user activity, store any logs, or have access to your data. Everything runs locally on your machine or your own infrastructure, ensuring zero latency from our side."
     },
     {
-      question: "How Do Ghost Relays Work?",
-      answer: "Ghost Relays use AI-driven pathfinding to route your traffic through multiple self-hosted nodes. The system dynamically adjusts routes based on network conditions, making it nearly impossible to trace your actual location or identity. This provides unparalleled security and anonymity."
+      question: "Will I get a job after completing a NIMLACC course?",
+      answer: " Yes you will, we will prepare you for them. You’ll build real projects, a strong portfolio, and get mentorship, interview prep, and career guidance to confidently enter the ML/Cloud job market."
     },
     {
-      question: "Can I Host My Own Relay?",
-      answer: "Yes! GhostWareOS is designed for self-hosting. You can set up your own relay nodes on any infrastructure you control, giving you complete autonomy over your privacy network and ensuring trustless operations."
+      question: "Are the courses online or offline?",
+      answer: "All programs are delivered in a both offline & online format, with mentor interaction, hands-on labs, and real-time support — so you get the flexibility of online with the quality of in-person learning."
     },
     {
-      question: "Which Networks Are Supported?",
-      answer: "GhostWareOS supports all major blockchain networks, messaging protocols, and web services. This includes Ethereum, Bitcoin, Solana, Signal, Telegram, and standard web browsing, providing a unified anonymity layer."
+      question: "How are the projects structured in the programs?",
+      answer: " Every project mirrors real industry scenarios — from building ML models using real datasets to deploying cloud-based services. You’ll submit code, get feedback, and deploy solutions like a pro."
     },
     {
-      question: "Why Trust Ghostware?",
-      answer: "GhostWareOS is fully open-source, independently audited, and endorsed by privacy advocates. Our code is transparent, our methods are proven, and our commitment to privacy is absolute. You don't have to trust us—you can audit the code yourself."
+      question: "Is there EMI or flexible fee support?",
+      answer: "Yes, we offer easy EMI plans so you can start learning without heavy upfront cost. Serious learners should have access — we keep quality premium but flexible."
     }
   ];
   

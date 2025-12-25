@@ -4,6 +4,8 @@
 /* @import "tailwindcss";
 @import "tw-animate-css"; */
 
+
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -52,16 +54,19 @@
   font-weight: 900;
   font-display: swap;
 } */
+
+/* Latest font: Organix.otf with normal weight */
 @font-face {
-  font-family: 'Poppins-SemiBold';
-  src: url('/Poppins-SemiBold.ttf') format('truetype');
-  font-weight: normal;
+  font-family: 'Organix';
+  src: url('/Organix.otf') format('opentype');
+  font-weight: 400; /* Set to normal to reduce boldness */
   font-style: normal;
   font-display: swap;
 }
 
 body {
-  font-family: 'Poppins-SemiBold', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Organix', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 200; /* Explicitly set normal weight for less bold text */
 }
 
 /* Add this to your global CSS or component styles */

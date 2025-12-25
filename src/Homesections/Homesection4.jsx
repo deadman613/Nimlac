@@ -84,9 +84,319 @@ export default function Testimonials() {
           transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
           will-change: transform, opacity;
         }
+
+        .card-stack {
+          perspective: 1000px;
+        }
+
+        .card-stack .card {
+          position: absolute;
+          width: 100%;
+          max-width: 600px;
+          transform-style: preserve-3d;
+          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-stack .card.hidden {
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .card-stack .card.visible {
+          z-index: 10;
+        }
+
+        .card-stack .card.behind {
+          z-index: 5;
+          transform: translateX(-20px) translateY(10px) scale(0.95);
+          opacity: 0.8;
+        }
+
+        .card-stack .card.far-behind {
+          z-index: 1;
+          transform: translateX(-40px) translateY(20px) scale(0.9);
+          opacity: 0.6;
+        }
+
+        .card-content {
+          background: rgba(17, 23, 26, 0.8);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(56, 189, 248, 0.1);
+          border-radius: 16px;
+          padding: 1.5rem;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .card-content::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: linear-gradient(90deg, rgba(56, 189, 248, 0.3), rgba(168, 85, 247, 0.3));
+          border-top-left-radius: 16px;
+          border-top-right-radius: 16px;
+        }
+
+        .quote-icon {
+          position: absolute;
+          top: 1rem;
+          left: 1rem;
+          font-family: 'Courier New', monospace;
+          font-weight: bold;
+          color: rgba(56, 189, 248, 0.6);
+          font-size: 1.5rem;
+          line-height: 1;
+          opacity: 0.8;
+        }
+
+        .author-section {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 1rem;
+          padding-top: 1rem;
+          border-top: 1px solid rgba(56, 189, 248, 0.1);
+        }
+
+        .author-info {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .avatar {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #0ea5e9, #60a5fa);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: 'Courier New', monospace;
+          font-weight: bold;
+          color: white;
+          font-size: 0.75rem;
+        }
+
+        .author-name {
+          font-family: 'Courier New', monospace;
+          font-weight: bold;
+          color: #ffffff;
+          font-size: 0.875rem;
+        }
+
+        .author-title {
+          font-family: 'Courier New', monospace;
+          font-size: 0.75rem;
+          color: rgba(156, 163, 175, 0.8);
+          margin-top: 0.125rem;
+        }
+
+        .batch-tag {
+          font-family: 'Courier New', monospace;
+          font-size: 0.75rem;
+          color: rgba(56, 189, 248, 0.8);
+          background: rgba(56, 189, 248, 0.1);
+          padding: 0.25rem 0.5rem;
+          border-radius: 4px;
+          white-space: nowrap;
+        }
+
+        .journey-tag {
+          font-family: 'Courier New', monospace;
+          font-size: 0.75rem;
+          color: rgba(168, 85, 247, 0.8);
+          background: rgba(168, 85, 247, 0.1);
+          padding: 0.25rem 0.5rem;
+          border-radius: 4px;
+          white-space: nowrap;
+        }
+
+        .card-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 0.75rem;
+        }
+
+        .nav-buttons {
+          display: flex;
+          gap: 0.5rem;
+        }
+
+        .nav-button {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          background: rgba(17, 23, 26, 0.6);
+          border: 1px solid rgba(56, 189, 248, 0.2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .nav-button:hover {
+          background: rgba(56, 189, 248, 0.1);
+          border-color: rgba(56, 189, 248, 0.4);
+          transform: scale(1.1);
+        }
+
+        .dot-indicator {
+          display: flex;
+          gap: 0.5rem;
+          margin-top: 1rem;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .dot {
+          width: 0.5rem;
+          height: 0.5rem;
+          border-radius: 50%;
+          background: rgba(156, 163, 175, 0.3);
+          transition: all 0.3s ease;
+        }
+
+        .dot.active {
+          background: rgba(56, 189, 248, 0.8);
+          width: 1rem;
+          height: 0.5rem;
+          border-radius: 4px;
+        }
+
+        /* Code theme styling */
+        .code-font {
+          font-family: 'Courier New', monospace;
+          letter-spacing: 0.05em;
+        }
+
+        .text-code {
+          color: #ffffff;
+          font-family: 'Courier New', monospace;
+        }
+
+        .text-code-muted {
+          color: rgba(156, 163, 175, 0.8);
+          font-family: 'Courier New', monospace;
+        }
+
+        .text-code-highlight {
+          color: rgba(56, 189, 248, 0.8);
+          font-family: 'Courier New', monospace;
+        }
+
+        .text-code-accent {
+          color: rgba(168, 85, 247, 0.8);
+          font-family: 'Courier New', monospace;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+          .card-content {
+            padding: 1rem;
+            border-radius: 12px;
+          }
+
+          .quote-icon {
+            top: 0.75rem;
+            left: 0.75rem;
+            font-size: 1.25rem;
+          }
+
+          .author-name {
+            font-size: 0.75rem;
+          }
+
+          .author-title {
+            font-size: 0.65rem;
+          }
+
+          .avatar {
+            width: 1.75rem;
+            height: 1.75rem;
+            font-size: 0.65rem;
+          }
+
+          .batch-tag,
+          .journey-tag {
+            font-size: 0.65rem;
+            padding: 0.15rem 0.3rem;
+          }
+
+          .nav-button {
+            width: 1.75rem;
+            height: 1.75rem;
+          }
+
+          .dot {
+            width: 0.4rem;
+            height: 0.4rem;
+          }
+
+          .dot.active {
+            width: 0.8rem;
+            height: 0.4rem;
+          }
+
+          .card-stack .card.behind {
+            transform: translateX(-15px) translateY(8px) scale(0.97);
+          }
+
+          .card-stack .card.far-behind {
+            transform: translateX(-30px) translateY(15px) scale(0.93);
+          }
+        }
+
+        @media (max-width: 480px) {
+          .card-content {
+            padding: 0.75rem;
+            border-radius: 10px;
+          }
+
+          .quote-icon {
+            top: 0.5rem;
+            left: 0.5rem;
+            font-size: 1rem;
+          }
+
+          .author-name {
+            font-size: 0.7rem;
+          }
+
+          .author-title {
+            font-size: 0.6rem;
+          }
+
+          .avatar {
+            width: 1.5rem;
+            height: 1.5rem;
+            font-size: 0.6rem;
+          }
+
+          .nav-button {
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+
+          .dot {
+            width: 0.35rem;
+            height: 0.35rem;
+          }
+
+          .dot.active {
+            width: 0.7rem;
+            height: 0.35rem;
+          }
+        }
       `}</style>
 
-      <div className="min-h-screen bg-gradient-diagonal flex items-center justify-center p-6 overflow-hidden relative">
+      <div className="min-h-screen bg-gradient-diagonal flex items-center justify-center p-4 sm:p-6 overflow-hidden relative">
         {/* Animated Background Glows */}
         <div className="absolute inset-0 opacity-40 pointer-events-none">
           <div className="absolute top-20 left-20 w-96 h-96 bg-teal-500/20 rounded-full blur-[100px] bg-glow-pulse"></div>
@@ -96,76 +406,78 @@ export default function Testimonials() {
 
         <div className="relative z-10 max-w-7xl w-full">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+          <div className="text-center mb-12 sm:mb-16">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight code-font">
               Student <span className="text-cyan-400">Success Stories</span>
             </h1>
-            <p className="text-cyan-300 text-lg md:text-xl font-light max-w-4xl mx-auto">
+            <p className="text-cyan-300 text-base sm:text-lg md:text-xl font-light max-w-4xl mx-auto code-font">
               Real graduates. Real careers. Real transformations.
             </p>
           </div>
 
-          {/* Narrower Carousel - Better width control */}
-          <div className="relative max-w-2xl mx-auto">
-            <div className="overflow-hidden rounded-3xl">
-              <div
-                className="flex transition-transform duration-700 ease-in-out"
-                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-              >
-                {[...testimonials, ...testimonials].map((t, i) => (
-                  <div key={i} className="w-full flex-shrink-0 px-3 sm:px-6">
-                    <div className="testimonial-card bg-black/40 backdrop-blur-xl border border-cyan-800/40 rounded-3xl p-6 sm:p-8 shadow-2xl h-full">
-                      {/* Quote Icon */}
-                      <div className="flex justify-center mb-6">
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full flex items-center justify-center">
-                          <Quote className="w-7 h-7 sm:w-8 sm:h-8 text-white" strokeWidth={2} />
-                        </div>
-                      </div>
+          {/* Card Stack Layout */}
+          <div className="relative max-w-2xl mx-auto card-stack">
+            {/* Card Container */}
+            <div className="relative h-[350px] sm:h-[400px] md:h-[450px]">
+              {testimonials.map((testimonial, index) => {
+                // Determine card position based on current index
+                let className = "card ";
+                
+                if (index === currentIndex) {
+                  className += "visible";
+                } else if (index === (currentIndex - 1 + testimonials.length) % testimonials.length) {
+                  className += "behind";
+                } else if (index === (currentIndex - 2 + testimonials.length) % testimonials.length) {
+                  className += "far-behind";
+                } else {
+                  className += "hidden";
+                }
 
-                      {/* Quote Text - More responsive sizing */}
-                      <p className="text-sm sm:text-base md:text-lg text-gray-200 text-center leading-relaxed mb-6 md:mb-8">
-                        "{t.quote}"
+                return (
+                  <div key={index} className={className}>
+                    <div className="card-content">
+                      <div className="quote-icon">“</div>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed mt-6 mb-6 code-font">
+                        {testimonial.quote}
                       </p>
-
-                      {/* Author Info */}
-                      <div className="text-center">
-                        <h4 className="text-xl sm:text-2xl font-bold text-cyan-300 mb-2">{t.name}</h4>
-                        <p className="text-sm sm:text-base text-gray-400 mb-1">{t.batch}</p>
-                        <p className="text-cyan-400 text-sm sm:text-base md:text-lg font-medium">{t.journey}</p>
+                      
+                      <div className="author-section">
+                        <div className="author-info">
+                          <div className="avatar">
+                            {testimonial.name.split(' ').map(n => n[0]).join('').toUpperCase()}
+                          </div>
+                          <div>
+                            <div className="author-name">{testimonial.name}</div>
+                            <div className="author-title">{testimonial.journey}</div>
+                          </div>
+                        </div>
+                        <div className="batch-tag">{testimonial.batch}</div>
+                      </div>
+                      
+                      <div className="card-footer">
+                        <div className="journey-tag">{testimonial.journey}</div>
+                        <div className="nav-buttons">
+                          <button onClick={prev} className="nav-button">
+                            <ChevronLeft className="w-3 h-3 text-cyan-400" />
+                          </button>
+                          <button onClick={next} className="nav-button">
+                            <ChevronRight className="w-3 h-3 text-cyan-400" />
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
 
-            {/* Navigation Arrows - Hidden on mobile, visible on larger screens */}
-            <button
-              onClick={prev}
-              className="hidden sm:flex absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-black/60 backdrop-blur-md rounded-full items-center justify-center border border-cyan-700/50 hover:border-cyan-400 hover:bg-cyan-900/30 transition-all"
-              aria-label="Previous"
-            >
-              <ChevronLeft className="w-6 h-6 md:w-7 md:h-7 text-cyan-400" />
-            </button>
-            <button
-              onClick={next}
-              className="hidden sm:flex absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-black/60 backdrop-blur-md rounded-full items-center justify-center border border-cyan-700/50 hover:border-cyan-400 hover:bg-cyan-900/30 transition-all"
-              aria-label="Next"
-            >
-              <ChevronRight className="w-6 h-6 md:w-7 md:h-7 text-cyan-400" />
-            </button>
-
-            {/* Dots Indicator */}
-            <div className="flex justify-center gap-3 mt-10">
+            {/* Centered Dots Indicator */}
+            <div className="dot-indicator">
               {testimonials.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrentIndex(i)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    i === currentIndex
-                      ? "bg-cyan-400 w-8"
-                      : "bg-cyan-800/50 hover:bg-cyan-600"
-                  }`}
+                  className={`dot ${i === currentIndex ? 'active' : ''}`}
                   aria-label={`Go to testimonial ${i + 1}`}
                 />
               ))}
@@ -173,8 +485,8 @@ export default function Testimonials() {
           </div>
 
           {/* CTA */}
-          <div className="text-center mt-20">
-            <p className="text-xl md:text-2xl text-cyan-300 font-light max-w-4xl mx-auto">
+          <div className="text-center mt-12 sm:mt-20">
+            <p className="text-lg sm:text-xl md:text-2xl text-cyan-300 font-light max-w-4xl mx-auto code-font">
               Ready to be our next success story?{" "}
               <span className="text-white font-bold">Talk to a Career Expert</span> and start your transformation.
             </p>
