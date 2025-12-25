@@ -46,7 +46,7 @@ export default function Navbar() {
               Contact
             </Link>
              <Link
-              href="Courses"
+              href="courses"
               className="text-gray-300 hover:text-white transition"
             >
               Courses
