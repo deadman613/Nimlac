@@ -86,7 +86,7 @@ export default function ParticularCourse() {
       </div>
       <div className="bg-gray-800/50 p-4 rounded-lg text-center">
         <div className="text-xs text-gray-400">Easy Installments</div>
-        <div className="text-2xl font-bold text-green-400 mt-1">
+        <div className="text-2xl font-bold text-cyan-400 mt-1">
           ₹{parseInt(course.monthlyPrice.replace(/[^\d]/g, ''))}
         </div>
         <div className="text-xs text-gray-400 mt-1">/month</div>
@@ -95,7 +95,7 @@ export default function ParticularCourse() {
     </div>
 
     {/* Enroll Button */}
-    <button className="w-full bg-gradient-to-r from-green-500 to-green-400 text-black font-bold py-3.5 rounded-full mt-4">
+    <button className="w-full bg-gradient-to-r from-cyan-500 to-cyan-400 text-black font-bold py-3.5 rounded-full mt-4">
       Enroll now
     </button>
 
