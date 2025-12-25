@@ -139,7 +139,7 @@ export default function Footer() {
           <div className="mt-10 md:mt-16 pt-6 border-t border-cyan-500/20 grid grid-cols-2 md:flex justify-between items-center gap-6 text-sm">
             <div className="flex items-center gap-2 text-gray-500">
               <Copyright className="w-4 h-4" />
-              <span>2025 GhostWare. All rights reserved.</span>
+              <span>2025 NimLacc. All rights reserved.</span>
             </div>
             
             <div className="flex items-center gap-6 text-gray-500 order-first md:order-last">
