@@ -52,10 +52,7 @@ export default function FAQSection() {
         }
         
         .gradient-bg-optimized {
-          /* Deeper, more atmospheric colors */
-          background: linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%);
-          background-size: 200% 200%;
-          animation: gradientShift 20s ease infinite; /* Slower animation for less lag */
+          background: #000;
         }
 
         .faq-item {
@@ -87,10 +84,10 @@ export default function FAQSection() {
         <div className="absolute top-1/4 left-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[150px]" />
         
-        <div className="relative z-10 max-w-4xl mx-auto w-full">
+        <div className="relative z-10 max-w-7xl mx-auto w-full">
           
           {/* Title - Enhanced color contrast */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-center text-white mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl  text-center text-white mb-12 md:mb-16">
             Your Questions <span className="text-cyan-400">Answered</span>
           </h2>
 

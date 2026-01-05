@@ -56,17 +56,20 @@
 } */
 
 /* Latest font: Organix.otf with normal weight */
-@font-face {
+/* @font-face {
   font-family: 'Organix';
   src: url('/Organix.otf') format('opentype');
-  font-weight: 400; /* Set to normal to reduce boldness */
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 body {
-  font-family: 'Organix', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 200; /* Explicitly set normal weight for less bold text */
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-weight: 400;
+  text-transform: capitalize;
+  background: #000;
 }
 
 /* Add this to your global CSS or component styles */

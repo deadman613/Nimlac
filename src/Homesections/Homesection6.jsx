@@ -14,7 +14,7 @@ export default function PlacementSection() {
       desc: "Startups, unicorns & enterprises actively recruiting our talent",
     },
     {
-      big: "INR 12 LPA",
+      big: "12+ LPA",
       label: "Average Package",
       desc: "Highest packages reaching 28 LPA for top performers",
     },
@@ -26,14 +26,14 @@ export default function PlacementSection() {
   ];
 
   const companies = [
-    { logo: "R", name: "Razorpay", field: "Fintech" },
-    { logo: "F", name: "Freshworks", field: "SaaS" },
-    { logo: "S", name: "Swiggy", field: "Consumer Tech" },
-    { logo: "M", name: "Meesho", field: "E-Commerce" },
-    { logo: "C", name: "CRED", field: "Fintech" },
-    { logo: "P", name: "PhonePe", field: "Payments" },
-    { logo: "Z", name: "Zomato", field: "Food Tech" },
-    { logo: "F", name: "Flipkart", field: "E-Commerce" },
+    { slug: "razorpay", name: "Razorpay", field: "Fintech" },
+    { slug: "freshworks", name: "Freshworks", field: "SaaS" },
+    { slug: "swiggy", name: "Swiggy", field: "Consumer Tech" },
+    { slug: "meesho", name: "Meesho", field: "E-Commerce" },
+    { slug: "cred", name: "CRED", field: "Fintech" },
+    { slug: "phonepe", name: "PhonePe", field: "Payments" },
+    { slug: "zomato", name: "Zomato", field: "Food Tech" },
+    { slug: "flipkart", name: "Flipkart", field: "E-Commerce" },
   ];
 
   return (
@@ -45,7 +45,7 @@ export default function PlacementSection() {
         }
 
         .bg-gradient-diagonal {
-          background: linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%);
+          background: #000;
         }
 
         .bg-glow-pulse { animation: subtleGlow 8s ease-in-out infinite; }
@@ -97,7 +97,7 @@ export default function PlacementSection() {
           <div className="big-card rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12">
             {/* Top header */}
             <p className="text-cyan-400 text-xs sm:text-sm uppercase tracking-widest mb-3">Placements & Companies</p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl  text-white mb-4 leading-tight">
               See Where Our Students Are <span className="text-cyan-400">Working</span>
             </h1>
             <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-3xl mb-8 sm:mb-10 leading-relaxed">
@@ -134,7 +134,13 @@ export default function PlacementSection() {
                   {companies.map((comp, i) => (
                     <div key={i} className="company-badge rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4">
                       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-cyan-600 to-purple-600 rounded-full flex items-center justify-center text-lg sm:text-xl font-bold text-white flex-shrink-0">
-                        {comp.logo}
+                        <img
+                          src={`https://cdn.simpleicons.org/${comp.slug}/ffffff`}
+                          alt={`${comp.name} logo`}
+                          className="w-6 h-6 sm:w-7 sm:h-7 md:w-7 md:h-7"
+                          loading="lazy"
+                          decoding="async"
+                        />
                       </div>
                       <div>
                         <h4 className="text-white font-semibold text-sm sm:text-base">{comp.name}</h4>
@@ -147,7 +153,7 @@ export default function PlacementSection() {
             </div>
 
             {/* Bottom CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-start mt-8 sm:mt-10">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 sm:mt-10">
               <button className="cta-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold">
                 Book My Free Counseling Call
               </button>

@@ -39,19 +39,19 @@ export default function CoursePackagesSection() {
         }
 
         .bg-gradient-diagonal {
-          background: linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%);
+          background: transparent;
         }
 
         .bg-glow-pulse { animation: subtleGlow 8s ease-in-out infinite; }
 
         .filter-card {
-          background: rgba(0, 0, 0, 0.45);
+          background: transparent;
           backdrop-filter: blur(16px);
           border: 1px solid rgba(34, 211, 238, 0.4);
         }
 
         .course-card {
-          background: rgba(0, 0, 0, 0.45);
+          background: transparent;
           backdrop-filter: blur(16px);
           border: 1px solid rgba(34, 211, 238, 0.3);
           transition: all 0.5s ease;
@@ -247,7 +247,7 @@ function CourseGrid({ courses }) {
                   </div>
                 )}
               </div>
-              <div className="p-5 flex flex-col flex-grow bg-[#1a1a2e]">
+              <div className="p-5 flex flex-col flex-grow bg-transparent">
                 <h3 className="text-lg font-bold text-white mb-2 line-clamp-2 min-h-[3.5rem]">
                   {course.title}
                 </h3>
@@ -265,7 +265,7 @@ function CourseGrid({ courses }) {
                   <p className="text-cyan-400 text-sm mb-4">
                     or <span className="font-semibold text-green-400">{course.monthlyPrice}</span>
                   </p>
-                  <button className="w-full px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:shadow-lg hover:shadow-cyan-500/30 transition-all">
+                  <button className="w-full px-6 py-3 rounded-full bg-gradient-to-r from-cyan-300 to-cyan-500 text-black font-bold hover:shadow-lg hover:shadow-cyan-500/30 transition-all">
                     View Details →
                   </button>
                 </div>

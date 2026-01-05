@@ -75,7 +75,7 @@ export default function Testimonials() {
         }
 
         .bg-gradient-diagonal {
-          background: linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%);
+          background: #000;
         }
 
         .bg-glow-pulse { animation: subtleGlow 8s ease-in-out infinite; }

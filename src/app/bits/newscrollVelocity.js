@@ -12,12 +12,20 @@ export default function ScrollVelocity({
   useEffect(() => {
     let raf;
 
-    const loop = () => {
-      x.current += speed;
+    const positiveMod = (value, modulus) => {
+      if (!Number.isFinite(modulus) || modulus <= 0) return 0;
+      return ((value % modulus) + modulus) % modulus;
+    };
 
+    const loop = () => {
       if (trackRef.current) {
-        const width = trackRef.current.scrollWidth / 2;
-        if (x.current >= width) x.current = 0;
+        const style = window.getComputedStyle(trackRef.current);
+        const gapPxRaw = style.columnGap && style.columnGap !== "normal" ? style.columnGap : style.gap;
+        const gapPx = Number.parseFloat(gapPxRaw) || 0;
+
+        const halfTrack = trackRef.current.scrollWidth / 2;
+        const wrapWidth = halfTrack + gapPx / 2;
+        x.current = positiveMod(x.current + speed, wrapWidth);
 
         trackRef.current.style.transform =
           `translate3d(-${x.current}px,0,0)`;

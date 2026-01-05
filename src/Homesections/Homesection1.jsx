@@ -61,7 +61,7 @@ export default function NigapeAnalytics() {
     <>
       <style jsx global>{`
         .bg-gradient-ghost-bg {
-          background: linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%);
+          background: #000;
         }
 
         .bg-gradient-logo {
@@ -76,6 +76,18 @@ export default function NigapeAnalytics() {
 
         .glow-ring {
           filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.7));
+        }
+        .text-black, .text-gray-900, .text-neutral-900 {
+          color: #fff !important;
+        }
+        .bg-white, .bg-gray-100, .bg-neutral-100 {
+          background: #18181b !important;
+        }
+        .border-gray-200, .border-neutral-200 {
+          border-color: #27272a !important;
+        }
+        .shadow-card {
+          box-shadow: 0 10px 25px rgba(6, 182, 212, 0.08);
         }
 
         .animate-float {
