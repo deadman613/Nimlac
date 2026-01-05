@@ -51,8 +51,8 @@ export default function WhatYouGainSection() {
         @keyframes scanline { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
         @keyframes fade-up { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: translateY(0); } }
 
-        .secmain { background: linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%); }
-        .gradient-text { background: linear-gradient(to right, #67e8f9, #3b82f6, #a855f7); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+        .secmain { background: #000; }
+        .gradient-text { background: linear-gradient(to right, #67e8f9, #3b82f6, #a855f7); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: #fff; }
         .gradient-diagonal { background: linear-gradient(to bottom right, rgba(6, 182, 212, 0.2), transparent 50%, rgba(147, 51, 234, 0.2)); }
         .neon-glow { box-shadow: 0 0 30px rgba(34, 211, 238, 0.4); }
         .card-hover:hover .scanline { animation: scanline 2s linear infinite; }

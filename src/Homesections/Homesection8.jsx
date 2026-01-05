@@ -11,7 +11,7 @@ export default function FinalCTASection() {
         }
 
         .bg-gradient-diagonal {
-          background: linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%);
+          background: #000;
         }
 
         .bg-glow-pulse { animation: subtleGlow 8s ease-in-out infinite; }
@@ -63,7 +63,7 @@ export default function FinalCTASection() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-96 md:h-96 bg-teal-500/15 rounded-full blur-[140px] bg-glow-pulse" style={{ animationDelay: "6s" }}></div>
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center w-full">
           {/* Main CTA Card */}
           <div className="cta-card rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-14">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">

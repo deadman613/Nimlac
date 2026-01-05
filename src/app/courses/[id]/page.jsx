@@ -32,7 +32,7 @@ export default function ParticularCourse() {
 
   if (!course) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+      <div className="min-h-screen flex items-center justify-center bg-transparent text-white">
         Course not found
       </div>
     );
@@ -41,7 +41,7 @@ export default function ParticularCourse() {
 
   const CourseInfoCard = () => (
   <div 
-    className="w-full md:w-96 bg-gray-900 backdrop-blur-lg border border-cyan-500/30 rounded-2xl p-6 space-y-6 sticky top-20 max-h-[80vh] overflow-hidden"
+    className="w-full md:w-96 bg-gray-900 backdrop-blur-lg border border-blue-500/30 rounded-2xl p-6 space-y-6 sticky top-20 max-h-[80vh] overflow-hidden"
     style={{
       msOverflowStyle: 'none',
       scrollbarWidth: 'none',
@@ -118,7 +118,7 @@ export default function ParticularCourse() {
 );
 
   return (
-    <div className="  bg-[linear-gradient(135deg,#01161d_0%,#000c10_25%,#01161d_50%,#001f28_75%,#01161d_100%)] min-h-screen pt-20 pb-16">
+    <div className="bg-transparent min-h-screen pt-20 pb-16">
       <div className="max-w-[1350px] mx-auto pt-20 px-2 sm:px-6">
         {/* Back Button */}
         <button

@@ -3,6 +3,7 @@
 import { ChevronDown, Target, Lightbulb } from 'lucide-react';
 import Link from 'next/link';
 import LetterGlitch from '../LetterGlitch';
+import HomeAbout from '@/Homesections/HomeAbout';
 
 export default function AboutPage() {
   const scrollToStory = () => {
@@ -23,8 +24,25 @@ export default function AboutPage() {
           font-display: swap;
         }
 
-        .about-minimal-bg {
-          background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(5, 12, 12, 1) 50%, rgba(0,0,0,1) 100%);
+
+   
+
+      
+
+        .hero-like-overlay-1 {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          pointer-events: none;
+       
+        }
+
+        .hero-like-overlay-2 {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          pointer-events: none;
+          
         }
 
         .glitch-bg-container {
@@ -33,6 +51,8 @@ export default function AboutPage() {
           z-index: 0;
           opacity: 0.4;
           pointer-events: none;
+          
+          
         }
 
         .fade-in-up {
@@ -57,6 +77,8 @@ export default function AboutPage() {
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+      
+
         .story-card:hover {
           transform: translateY(-5px);
           box-shadow: 0 20px 40px rgba(0, 255, 255, 0.15);
@@ -77,10 +99,10 @@ export default function AboutPage() {
       `}</style>
 
       {/* SECTION 1: ABOUT US */}
-      <section className="relative min-h-screen about-minimal-bg overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6">
-        
+      <section className="relative min-h-screen overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6">
+
         {/* Glitch Background */}
-        <div className="glitch-bg-container">
+        <div className="glitch-bg-container  ">
           <LetterGlitch
             glitchSpeed={50}
             centerVignette={true}
@@ -88,12 +110,25 @@ export default function AboutPage() {
             smooth={true}
           />
         </div>
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 1,
+            pointerEvents: "none",
+            background:
+              "linear-gradient(135deg, rgba(0, 0, 0, 0.18) 20%, rgba(0,0,0,0.92) 70%, rgba(0.98,0,0,0.98) 100%)",
+          }}
+
+        />
+
+       
 
         {/* Content */}
-        <div className="relative z-10 max-w-4xl pt-20 mx-auto text-center fade-in-up">
-          
+        <div className="relative z-10 max-w-4xl pt-20 mx-auto text-center fade-in-up ">
+
           {/* Main Heading */}
-          <h1 
+          <h1
             className="text-5xl sm:text-7xl md:text-8xl font-bold text-white tracking-[0.3em] mb-8 leading-tight mt-30"
             style={{ fontFamily: 'PoppinsSemiBold, sans-serif' }}
           >
@@ -113,7 +148,7 @@ export default function AboutPage() {
 
           {/* Key Values Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16">
-            
+
             <div className="p-6 rounded-lg bg-gray-900/40 border border-cyan-500/20 backdrop-blur-sm">
               <Target className="w-8 h-8 text-cyan-400 mx-auto mb-3" />
               <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: 'PoppinsSemiBold, sans-serif' }}>Our Mission</h3>
@@ -135,25 +170,30 @@ export default function AboutPage() {
         </div>
 
         {/* Scroll Indicator */}
-        <button 
+        <button
           onClick={scrollToStory}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-cyan-400 hover:text-cyan-300 transition-colors scroll-indicator cursor-pointer"
           aria-label="Scroll to story"
         >
           <ChevronDown className="w-10 h-10" />
         </button>
-        
+
       </section>
 
+      <HomeAbout />
+
       {/* SECTION 2: THE STORY */}
-      <section 
+      <section
         id="story-section"
-        className="relative min-h-screen about-minimal-bg overflow-hidden py-20 px-4 sm:px-6"
+        className="relative min-h-screen overflow-hidden py-20 px-4 sm:px-6 bg-black"
       >
-        
+
+        <div className="hero-like-overlay-1" />
+        <div className="hero-like-overlay-2" />
+
         {/* Glitch Background */}
         {/* <div className="glitch-bg-container"> */}
-          {/* <LetterGlitch
+        {/* <LetterGlitch
             glitchSpeed={50}
             centerVignette={true}
             outerVignette={false}
@@ -162,11 +202,11 @@ export default function AboutPage() {
         </div> */}
 
         {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto">
-          
+        <div className="relative z-10 max-w-6xl mx-auto bg-black ">
+
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 
+          <div className="text-center mb-16  ">
+            <h2
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-widest mb-6"
               style={{ fontFamily: 'PoppinsSemiBold, sans-serif' }}
             >
@@ -177,7 +217,7 @@ export default function AboutPage() {
 
           {/* Story Timeline */}
           <div className="space-y-12 max-w-4xl mx-auto">
-            
+
             {/* Chapter 1 */}
             <div className="story-card p-8 rounded-xl bg-gray-900/50 border border-cyan-500/30 backdrop-blur-sm">
               <div className="flex items-start gap-4 mb-4">
@@ -240,7 +280,7 @@ export default function AboutPage() {
           </div>
 
         </div>
-        
+
       </section>
     </>
   );

@@ -64,27 +64,7 @@ export default function ComparisonSection() {
         }
 
         .mainbg {
-          background: linear-gradient(135deg, #01161d 0%, #000c10 25%, #01161d 50%, #001f28 75%, #01161d 100%);
-        }
-
-        .divider-line {
-          position: absolute;
-          left: 50%;
-          top: 0;
-          bottom: 0;
-          width: 2px;
-          background: linear-gradient(to bottom, transparent, rgba(255,0,0,0.6), transparent);
-          z-index: 10;
-        }
-
-        @media (max-width: 768px) {
-          .divider-line {
-            left: 0;
-            top: 50%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(to right, transparent, rgba(255,0,0,0.6), transparent);
-          }
+          background: #000;
         }
       `}</style>
 
@@ -92,10 +72,10 @@ export default function ComparisonSection() {
         {/* Background overlay */}
         <div className="absolute inset-0 bg-black/30" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto">
+        <div className="relative z-10 w-full max-w-8xl mx-auto">
           {/* Title */}
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-4">
+            <h2 className="text-4xl md:text-6xl  text-white mb-4">
               How Does <span className="text-cyan-400">NIMLACC</span> Compare?
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 font-light">
@@ -104,19 +84,16 @@ export default function ComparisonSection() {
           </div>
 
           {/* Single Frame Comparison Card */}
-          <div className="relative bg-black/40 backdrop-blur-xl border border-cyan-800/50 rounded-3xl overflow-hidden shadow-2xl">
-            {/* Divider Line */}
-            <div className="divider-line" />
-
+          <div className="relative">
             {/* Grid Layout - 2 columns on desktop, 1 on mobile */}
             <div className="grid grid-cols-1 md:grid-cols-2">
               {/* Left Side - NIMLACC (Cyan) */}
               <div className="relative p-8 md:p-12 lg:p-16">
                 <div className="text-center mb-10">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-cyan-900/50 rounded-2xl border-2 border-cyan-400 glow-pulse-cyan mb-6">
+                  {/* <div className="inline-flex items-center justify-center w-16 h-16 bg-cyan-900/50 rounded-2xl border-2 border-cyan-400 glow-pulse-cyan mb-6">
                     <Check className="w-10 h-10 text-cyan-400" strokeWidth={4} />
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-cyan-300">NIMLACC</h3>
+                  </div> */}
+                  <h3 className="text-3xl text-left md:text-4xl  text-cyan-300">NIMLACC</h3>
                 </div>
 
                 <div className="space-y-8">
@@ -138,23 +115,23 @@ export default function ComparisonSection() {
               </div>
 
               {/* Right Side - Traditional (Red) */}
-              <div className="relative p-8 md:p-12 lg:p-16 bg-gradient-to-b from-transparent via-red-900/10 to-transparent">
+              <div className="relative p-8 md:p-12 lg:p-16 bg-gradient-to-b from-transparent ">
                 <div className="text-center mb-10">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-red-900/50 rounded-2xl border-2 border-red-600 glow-pulse-red mb-6">
+                  {/* <div className="inline-flex items-center justify-center w-16 h-16 bg-red-900/50 rounded-2xl border-2 border-red-600 glow-pulse-red mb-6">
                     <X className="w-10 h-10 text-red-500" strokeWidth={4} />
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-red-500">Traditional Courses</h3>
+                  </div> */}
+                  <h3 className="text-3xl text-right md:text-4xl text-red-500">Traditional Courses</h3>
                 </div>
 
                 <div className="space-y-8">
                   {items.map((item, i) => {
                     const Icon = item.icon;
                     return (
-                      <div key={i} className="flex items-start gap-6 group">
+                      <div key={i} className="flex flex-row-reverse items-start gap-6 group">
                         <div className="w-14 h-14 shrink-0 bg-red-900/30 rounded-xl border border-red-700/50 flex items-center justify-center glow-pulse-red transition-all group-hover:scale-110">
                           <Icon className="w-8 h-8 text-red-500" />
                         </div>
-                        <div>
+                        <div className="text-right">
                           <h4 className="text-xl font-semibold text-gray-400 mb-1 line-through">{item.title}</h4>
                           <p className="text-red-400 text-base leading-relaxed">{item.negative}</p>
                         </div>

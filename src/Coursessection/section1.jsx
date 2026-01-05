@@ -1,6 +1,5 @@
 // app/components/CourseHeroSection.jsx
 "use client";
-import ScrollVelocity from "@/app/bits/ScrollVelocity";
 
 export default function CourseHeroSection() {
   return (
@@ -327,30 +326,6 @@ export default function CourseHeroSection() {
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="bg-gradient-diagonal my-0 relative flex items-center overflow-hidden py-0">
-        <ScrollVelocity
-          texts={[
-            "Python",
-            "TensorFlow",
-            "PyTorch",
-            "Scikit-Learn",
-            "AWS",
-            "Google Cloud Platform",
-            "Microsoft Azure",
-            "Docker",
-            "Kubernetes",
-            "MLOps"
-          ]}
-          speed={3.6}
-          className="
-            text-transparent bg-clip-text 
-            bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500
-            text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
-            font-bold whitespace-nowrap
-          "
-        />
       </section>
     </>
   );

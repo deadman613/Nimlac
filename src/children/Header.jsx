@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+// import { Ghost } from "lucide-react";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -7,58 +8,48 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Font definition — only change */}
-      <style jsx>{`
-        @font-face {
-          font-family: 'Organix';
-          src: url('/font/Organix.otf') format('opentype');
-        }
-        .nav-font {
-          font-family: 'Organix', sans-serif;
-        }
-      `}</style>
-
       {/* Desktop + Tablet */}
       <nav className="hidden lg:flex items-center justify-center w-full fixed top-6 inset-x-0 z-50 pointer-events-none px-2">
-        <div className="flex items-center justify-between w-full max-w-7xl bg-[#06191a] rounded-full backdrop-blur-xl border border-cyan-500/20 ring-2 ring-cyan-400/50 shadow-2xl shadow-cyan-500/10 px-8 py-4 pointer-events-auto">
+        <div className="flex items-center justify-between w-full max-w-7xl bg-transparent rounded-full backdrop-blur-[2px] border border-cyan-500/20 ring-2 ring-cyan-400/50 shadow-2xl shadow-cyan-500/10 px-8 py-3 pointer-events-auto">
           
-          {/* Left-aligned Logo - Only Image */}
-          <div className="flex items-center">
+          {/* Logo */}
+          <div className="flex items-center space-x-3">
             <div className="relative">
-              <div className="w-full h-10 flex items-center justify-center">
-                <img 
-                  src="/Nimlacc-2.svg" 
-                  alt="nimlacc logo" 
-                  className="w-full h-full scale-200 object-cover"
-                />
-              </div>
-              <div className="absolute -inset-3 bg-cyan-500/30 blur-2xl rounded-full animate-pulse -z-10"></div>
+              {/* <div className="w-10 h-10 rounded-full bg-linear-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/50">
+                <Ghost className="w-6 h-6 text-[#03ffff]" />
+              </div> */}
+              <div className="absolute -inset-1 bg-cyan-500/30 blur-xl rounded-full animate-pulse -z-10"></div>
             </div>
+            <img
+              src="/uploads/Nimlacc-2.svg"
+              alt="Nimlac"
+              className="h-6 sm:h-7 w-auto"
+            />
           </div>
 
-          {/* Center Links */}
+          {/* Center Links - Only Home, About, Contact */}
           <div className="flex items-center space-x-10">
             <Link
               href="/"
-              className="text-[#03ffff] font-medium hover:text-white transition text-lg nav-font"
+              className="text-[#03ffff] font-medium hover:text-white transition"
             >
               Home
             </Link>
             <Link
-              href="/About"
-              className="text-gray-300 hover:text-white transition text-lg nav-font"
+              href="About"
+              className="text-gray-300 hover:text-white transition"
             >
               About
             </Link>
             <Link
-              href="/Contact"
-              className="text-gray-300 hover:text-white transition text-lg nav-font"
+              href="Contact"
+              className="text-gray-300 hover:text-white transition"
             >
               Contact
             </Link>
-            <Link
-              href="/courses"
-              className="text-gray-300 hover:text-white transition text-lg nav-font"
+             <Link
+              href="courses"
+              className="text-gray-300 hover:text-white transition"
             >
               Courses
             </Link>
@@ -67,21 +58,22 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Version */}
-      <nav className="lg:hidden w-[94%] max-w-md mx-auto my-4 bg-[#06191a] rounded-3xl backdrop-blur-xl border-b border-cyan-500/20 fixed inset-x-0 top-4 z-50">
+      <nav className="lg:hidden w-[94%] max-w-md mx-auto my-4 bg-transparent rounded-3xl  border-b border-cyan-500/20 fixed inset-x-0 top-4 z-50">
         <div className="px-6 py-4 flex items-center justify-between">
           
-          {/* Logo - Only Image */}
-          <div className="flex items-center">
+          {/* Logo */}
+          <div className="flex items-center space-x-3">
             <div className="relative">
-              <div className="w-12 h-12 flex items-center justify-center">
-                <img 
-                  src="/Nimlacc-2.svg" 
-                  alt="nimlacc logo" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
+              {/* <div className="w-10 h-10 rounded-full bg-linear-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/50">
+                <Ghost className="w-6 h-6 text-[#03ffff]" />
+              </div> */}
               <div className="absolute -inset-1 bg-cyan-500/30 blur-xl rounded-full animate-pulse"></div>
             </div>
+            <img
+              src="/uploads/Nimlacc-2.svg"
+              alt="Nimlac"
+              className="h-6 w-auto"
+            />
           </div>
 
           {/* Hamburger Button */}
@@ -91,7 +83,7 @@ export default function Navbar() {
           >
             <div className="absolute inset-0 rounded-full border-2 border-cyan-400/50 animate-ping"></div>
             <div className="absolute inset-1 rounded-full border border-cyan-400/80"></div>
-            <div className="relative w-9 h-9 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 shadow-lg shadow-cyan-500/80 flex items-center justify-center">
+            <div className="relative w-9 h-9 rounded-full bg-linear-to-br from-cyan-400 to-blue-600 shadow-lg shadow-cyan-500/80 flex items-center justify-center">
               <svg
                 className={`w-5 h-5 text-white transition-all duration-300 ${
                   mobileOpen ? "rotate-45" : ""
@@ -115,41 +107,34 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Only Home, About, Contact */}
         <div
           className={`transition-all duration-300 ease-out overflow-hidden ${
             mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="mx-4 mt-3 bg-[#06191a]/95 backdrop-blur-xl border border-cyan-500/20 rounded-3xl pb-6">
+          <div className="mx-4 mt-3 bg-transparent backdrop-blur-[2px] border border-cyan-500/20 rounded-3xl pb-6">
             <div className="px-8 pt-4 space-y-5 text-lg">
               <Link
                 href="/"
-                className="block text-[#03ffff] font-medium hover:text-white nav-font"
+                className="block text-[#03ffff] font-medium hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 Home
               </Link>
               <Link
-                href="/About"
-                className="block text-gray-300 hover:text-white nav-font"
+                href="/about"
+                className="block text-gray-300 hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 About
               </Link>
               <Link
-                href="/Contact"
-                className="block text-gray-300 hover:text-white nav-font"
+                href="/contact"
+                className="block text-gray-300 hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 Contact
-              </Link>
-              <Link
-                href="/Courses"
-                className="block text-gray-300 hover:text-white nav-font"
-                onClick={() => setMobileOpen(false)}
-              >
-                Courses
               </Link>
             </div>
           </div>

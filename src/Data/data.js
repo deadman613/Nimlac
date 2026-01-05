@@ -13,7 +13,7 @@ export const courses = [
     discount: "8% off",
     monthlyPrice: "₹9,167",
     monthlyPayments: 12,
-    image: "https://via.placeholder.com/600x300?text=Node.js+API+JS+Course", // Updated image URL
+    image: "https://ml-ops.org/img/mlops-phasen.jpg ", // Updated image URL
     description: "Ideal for 12th-pass students and college undergrads serious about a tech career. End-to-end ML and Cloud – Python, TensorFlow/PyTorch, AWS/Azure services, data handling, model deployment.",
     fullDescription: "This comprehensive 12-month diploma program is ideal for 12th-pass students and college undergrads aiming for a strong tech career. Go from zero to building and deploying real ML/Cloud solutions. Master Python, TensorFlow/PyTorch, AWS/Azure services, data handling, and model deployment through hands-on projects. Career outcomes include ML Engineer, Data Scientist, or Cloud Developer roles with a strong portfolio.",
     instructor: {

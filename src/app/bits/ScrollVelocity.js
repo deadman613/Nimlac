@@ -13,12 +13,20 @@ export default function ScrollVelocity({
   useEffect(() => {
     let raf;
 
-    const loop = () => {
-      x.current += speed;
+    const positiveMod = (value, modulus) => {
+      if (!Number.isFinite(modulus) || modulus <= 0) return 0;
+      return ((value % modulus) + modulus) % modulus;
+    };
 
+    const loop = () => {
       if (trackRef.current) {
-        const width = trackRef.current.scrollWidth / 2;
-        if (x.current >= width) x.current = 0;
+        const style = window.getComputedStyle(trackRef.current);
+        const gapPxRaw = style.columnGap && style.columnGap !== "normal" ? style.columnGap : style.gap;
+        const gapPx = Number.parseFloat(gapPxRaw) || 0;
+
+        const halfTrack = trackRef.current.scrollWidth / 2;
+        const wrapWidth = halfTrack + gapPx / 2;
+        x.current = positiveMod(x.current + speed, wrapWidth);
 
         trackRef.current.style.transform = `translate3d(-${x.current}px,0,0)`;
       }
@@ -37,18 +45,26 @@ export default function ScrollVelocity({
         className="flex w-max will-change-transform"
         style={{ gap }}
       >
-        {[...texts, ...texts].map((text, i) => (
-          <span
-            key={i}
-            className={`text-5xl md:text-7xl font-bold whitespace-nowrap
-              text-transparent bg-clip-text
-              bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500
-              drop-shadow-[0_0_18px_rgba(34,211,238,0.35)]
-              ${className}`}
-          >
-            {text}
-          </span>
-        ))}
+        {[...texts, ...texts].map((item, i) => {
+          const isString = typeof item === "string";
+
+          return (
+            <span
+              key={i}
+              className={
+                isString
+                  ? `text-5xl md:text-7xl font-bold whitespace-nowrap
+                      text-transparent bg-clip-text
+                      bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500
+                      drop-shadow-[0_0_18px_rgba(34,211,238,0.35)]
+                      ${className}`
+                  : `inline-flex items-center justify-center whitespace-nowrap ${className}`
+              }
+            >
+              {item}
+            </span>
+          );
+        })}
       </div>
     </div>
   );

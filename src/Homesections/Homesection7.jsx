@@ -57,6 +57,7 @@ export default function GallerySection() {
           position: relative;
           overflow: hidden;
           background: #000;
+          color: #fff;
         }
 
         /* Center large image */
