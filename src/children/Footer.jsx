@@ -46,36 +46,26 @@ export default function Footer() {
       `}</style>
 
       <footer className="relative w-full bg-footer-main border-t border-cyan-500/20 overflow-hidden">
-        
         {/* Top subtle glow */}
         <div className="absolute inset-0 bg-top-glow pointer-events-none" />
-        
         <div className="max-w-7xl mx-auto px-6 sm:px-8 py-12 md:py-16 relative z-10">
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-12">
-            
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 lg:gap-12">
             {/* Brand */}
             <div className="space-y-6 md:space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="relative">
-                  
-                 
-                </div>
-                    <img className=' w-[140px] scale-105' src="/Nimlacc-2.svg" alt="" />
-                
+                <div className="relative"></div>
+                <img className=' w-[140px] scale-105' src="/Nimlacc-2.svg" alt="" />
               </div>
-              
               <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
                 India’s Premier Machine Learning & Cloud Institute
               </p>
-              
               <div className="flex space-x-4 pt-2">
                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
-                   className="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 group">
+                  className="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 group">
                   <Twitter className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition" />
                 </a>
                 <a href="https://t.me" target="_blank" rel="noopener noreferrer"
-                   className="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 group">
+                  className="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 group">
                   <MessageCircle className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition" />
                 </a>
                 <a href="#" className="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 group">
@@ -83,7 +73,6 @@ export default function Footer() {
                 </a>
               </div>
             </div>
-
             {/* Product */}
             <div className="mt-4 md:mt-0">
               <h3 className="text-white font-semibold mb-5 relative inline-block underline-cyan">
@@ -99,7 +88,6 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-
             {/* Community */}
             <div className="mt-4 md:mt-0">
               <h3 className="text-white font-semibold mb-5 relative inline-block underline-cyan">
@@ -116,7 +104,6 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-
             {/* Legal */}
             <div className="mt-4 md:mt-0">
               <h3 className="text-white font-semibold mb-5 relative inline-block underline-cyan">
@@ -133,15 +120,33 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
+            {/* Contact */}
+            <div className="mt-4 md:mt-0">
+              <h3 className="text-white font-semibold mb-5 relative inline-block underline-cyan">
+                Contact
+              </h3>
+              <ul className="space-y-3">
+                <li className="text-gray-400 text-sm">
+                  Email: <a href="mailto:info@nimlac.com" className="hover:text-cyan-300 transition">info@nimlac.com</a>
+                </li>
+                <li className="text-gray-400 text-sm">
+                  Phone: <a href="tel:+911234567890" className="hover:text-cyan-300 transition">+91 12345 67890</a>
+                </li>
+                <li className="text-gray-400 text-sm">
+                  Address: Spacetime Management Pvt Ltd Design House,
+behind Savitri Cinema Complex,
+Greater Kailash II, Chittaranjan Park,
+New Delhi, Delhi 110048
+                </li>
+              </ul>
+            </div>
           </div>
-
           {/* Bottom Bar */}
           <div className="mt-10 md:mt-16 pt-6 border-t border-cyan-500/20 grid grid-cols-2 md:flex justify-between items-center gap-6 text-sm">
             <div className="flex items-center gap-2 text-gray-500">
               <Copyright className="w-4 h-4" />
               <span>2025 NimLacc. All rights reserved.</span>
             </div>
-            
             <div className="flex items-center gap-6 text-gray-500 order-first md:order-last">
               <span className="hover:text-cyan-400 cursor-default transition">Made with zero trust</span>
               <span className="text-cyan-400 font-semibold flex items-center gap-1">
@@ -154,7 +159,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
         {/* Floating Particles */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {[...Array(5)].map((_, i) => (
