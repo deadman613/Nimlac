@@ -234,11 +234,13 @@ export default function ParticularCourse() {
             <div className="bg-gray-800/30 p-6 rounded-2xl">
               <h2 className="text-2xl font-bold text-white mb-4">Instructor</h2>
               <div className="flex items-center gap-4">
-                <img
-                  src={course.instructor.image}
-                  alt={course.instructor.name}
-                  className="w-16 h-16 rounded-full"
-                />
+                <div className="bg-[#0c0e12] p-1.5 rounded-xl border border-gray-800 flex items-center justify-center overflow-hidden" style={{minWidth:'56px', minHeight:'56px'}}>
+                  <img
+                    src={course.instructor.image}
+                    alt={course.instructor.name}
+                    className="w-16 h-16 object-cover object-top rounded-lg scale-110"
+                  />
+                </div>
                 <div>
                   <h3 className="font-bold text-white">
                     {course.instructor.name}

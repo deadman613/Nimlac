@@ -15,7 +15,7 @@
 .backgroundGlows {
   position: absolute;
   inset: 0;
-  opacity: 0.4;
+  opacity: 5.4;
   pointer-events: none;
 }
 
@@ -160,6 +160,7 @@
 .cardContainer {
   position: relative;
   height: 350px;
+
 }
 
 .card {
@@ -167,7 +168,7 @@
   width: 100%;
   max-width: 600px;
   transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.6s cubic-bezier(1.4, 1, 0.2, 1), opacity 1.6s cubic-bezier(1.4, 1, 0.2, 1);
   will-change: transform, opacity;
 }
 

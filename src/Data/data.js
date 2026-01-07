@@ -17,7 +17,7 @@ export const courses = [
     description: "Ideal for 12th-pass students and college undergrads serious about a tech career. End-to-end ML and Cloud – Python, TensorFlow/PyTorch, AWS/Azure services, data handling, model deployment.",
     fullDescription: "This comprehensive 12-month diploma program is ideal for 12th-pass students and college undergrads aiming for a strong tech career. Go from zero to building and deploying real ML/Cloud solutions. Master Python, TensorFlow/PyTorch, AWS/Azure services, data handling, and model deployment through hands-on projects. Career outcomes include ML Engineer, Data Scientist, or Cloud Developer roles with a strong portfolio.",
     instructor: {
-      name: "Manjeet Singh", // Updated instructor name
+      name: "Shagun Shrivastav", // Updated instructor name
       title: "Instructor", // Updated instructor title
       bio: "Experienced instructor with a passion for teaching modern web technologies and cloud computing.", // Updated bio
       image: "/nimlacpic/shagun.png", // Updated image path (placeholder)
